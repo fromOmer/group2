@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/contact.css">
+    <script src="https://kit.fontawesome.com/b39bb7fe27.js"></script>
+    <title>Contact us</title>
+</head>
+<body onload="welcomingTitle()">
+    <div class="topBar"> </div>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <img src="../pics/flow%20big.png" alt="Navigation Bar Logo" class = "navBarLogo">
+        <ul>
+            <li><a href="/Home-page.html">Home</a></li>
+            <li><a href="/Coach.html">FLOW coaches </a></li>
+            <li><a href="/Training.html">FLOW classes</a></li>
+            <li><a href="/Table%20of%20classes.html">FLOW week schedule</a></li>
+            <li><a href="/Contact-us.html">Contact us</a></li>
+            <li><a href="/User%20profile.html">My Profile</a></li>
+        </ul>
+    </nav>
+    <div class="wrapper">
+        <h1>Contact us</h1>
+        <form class="contact-form">
+            <form action="mailto:flow.studio@gmail.com" method="post" enctype="text/plain">
+                    <input type="tel" id="ID" name="ID" placeholder="Enter ID" required>
+                    <input type="email" id="Email" placeholder="Enter Email">
+                    <label for="request" class="request">Select request topic:</label>
+                    <select id="request" name="request" size="1">
+                        <option value="Forget your password">Forget your password</option>
+                        <option value="Help with registration">Help with registration</option>
+                        <option value="Explanation of the studio">Explanation of the studio</option>
+                        <option value="Update my profile">Update my profile</option>
+                        <option value="Technical problems">Technical problems</option>
+                        <option value="Talk to a representative">Talk to a representative</option>
+                        <option value="Membership cancellation">Membership cancellation</option>
+                        <option value="Training sessions help">An explanation of one of the training sessions</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" required></textarea>
+                    <div class="form-submit">
+                        <input type="submit" value="Send">
+                    </div>
+            </form>
+        </form>
+    </div>
+
+
+
+    <script src="#"></script>
+   <script src="../Public/JS/Welcome-title.js"> </script>
+    <script src="../JS/contact.js"></script>
+</body>
+</html>

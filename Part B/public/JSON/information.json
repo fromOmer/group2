@@ -2,11 +2,13 @@
 "trainers": [
   {
   "ID": "1",
-  "password": "11"
+  "password": "11",
+   "email": "demo1@gmail.com"
 },
 {
   "ID": "2",
-  "password": "22"
+  "password": "22",
+  "email": "demo2@gmail.com"
 }
 ], "Trainings" : [
   {

@@ -1,8 +1,10 @@
 //invalid values in the registration //
-const form = document.querySelector('.contact-form');
+const form = document.querySelector('.form-container');
 // Get references to the form and the inputs
     const customerID = document.querySelector("#ID");
     const customerEmail = document.querySelector("#Email");
+    console.log(customerID)
+console.log(customerEmail)
    form.addEventListener("submit",function(event) {
     event.preventDefault();
 
@@ -11,7 +13,7 @@ const form = document.querySelector('.contact-form');
     Valid_user(ID, email)
         .then(result => {
             if (result) {
-                alert("Your request is send! we will answer as soon as possible." +
+                alert("Your request has been saved. Thank you!" +
                     " Redirected to home page.");
                 Go_to_Home_Page();
             } else {

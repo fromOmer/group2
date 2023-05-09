@@ -288,7 +288,7 @@ footer{
     align-items: center;
     background-size: cover;
     z-index: 0 !important;
-    position: fixed;
+    position: sticky;
     bottom: 0;
     width: 100%;
 }

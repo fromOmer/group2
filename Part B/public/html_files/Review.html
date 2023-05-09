@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/Review.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <title>Review</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class = "formbx">
+            <div class="container">
+                <form class="form-container">
+                    <h1>Review class</h1>
+                    <form action="mailto:flow.studio@gmail.com"  method="post" enctype="text/plain">
+                            <input type="tel" id="ID" name="ID" placeholder="Enter your ID" required>
+                            <input type="Email" id="Email" name="Email" placeholder="Enter your Email" required>
+                            <label for="Day">Day:</label>
+                            <select id="Day" name="Day" size="1">
+                                  <option value="Sunday">Sunday</option>
+                                  <option value="Monday">Monday</option>
+                                  <option value="Tuesday">Tuesday</option>
+                                  <option value="Wednesday">Wednesday</option>
+                                  <option value="Thursday">Thursday</option>
+                                  <option value="Friday">Friday</option>
+                                  <option value="Saturday">Saturday</option>
+                            </select>
+                            <label for="time">Time:</label>
+                            <select id="time" name="time" size="1">
+                                  <option value="09:00">9:00 AM</option>
+                                  <option value="10:00">10:00 AM</option>
+                                  <option value="11:00">11:00 AM</option>
+                                  <option value="12:00">12:00 AM</option>
+                                  <option value="17:00">17:00 AM</option>
+                                  <option value="18:00">18:00 AM</option>
+                                  <option value="19:00">19:00 AM</option>
+                                  <option value="20:00">20:00 AM</option>
+                                  <option value="21:00">21:00 AM</option>
+                            </select>
+                            <label for="workout">Workout:</label>
+                            <select id="workout" name="workout">
+                                  <option value="Yoga Training">Yoga Training</option>
+                                  <option value="Functional Training">Functional Training</option>
+                                  <option value="Zumba Training">Zumba Training</option>
+                                  <option value="Pilates Training">Zumba Training</option>
+                                  <option value="Strength Training">Strength Training</option>
+                                  <option value="TRX Training">TRX Training</option>
+                            </select>
+                            <label for="description">Description:</label>
+                            <textarea id="description" name="description" required></textarea>
+                            <label for="score">The training score:</label>
+                            <select id="score" name="score" size="1">
+                                   <option value="1n">1</option>
+                                   <option value="2">2</option>
+                                   <option value="3">3</option>
+                                   <option value="4">4</option>
+                                   <option value="5">5</option>
+                            </select>
+                            <p>Please note: a score of 5 indicates that the workout was challenging for you and your body.<br> A score of 1 indicates that the workout was not challenging at all for you.</p>
+                            <div class="form-submit">
+                                <input type="submit" value="Send review">
+                            </div>
+                    </form>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="../JS/review.js"></script>
+</body>
+</html>

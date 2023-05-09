@@ -29,6 +29,6 @@ const buttons = document.querySelectorAll('.button');
 buttons.forEach(button => {
   button.addEventListener('click', () => {
     const url = button.dataset.url;
-    window.open(url,'_blank', 'width=400,height=400');
+    window.open(url,'_blank', 'width=600,height=1000');
   });
 });

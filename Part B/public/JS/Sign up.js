@@ -20,7 +20,7 @@ form.addEventListener('submit', function(event) {
   if (validateID() && validateFirstName() && validateLastName() && validateEmail() && validatePassword()) {
     setTimeout(function () {
       alert("You are now registered and redirected to sign in page");
-      window.location.href = "SignIn2.html";
+      window.location.href = "SignIn.html";
     }, 500);
   }
   else{
