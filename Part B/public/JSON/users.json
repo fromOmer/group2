@@ -1,0 +1,32 @@
+{
+  "Users" : [
+    {
+      "id": "756553645",
+      "firstname": "Daniel",
+      "lastname": "Osh",
+      "email": "DanielOsh@gmail.com",
+      "phone": "0562736587",
+      "dob": "10/02/1976",
+      "healthLevel": "4",
+      "lessons": [["Zumba Training","20/05/2022 10:00:00"], ["Yoga Training", "10/06/2022 12:30:00"], ["Yoga Training", "25/06/2022 20:15:00"]]
+    }, {
+      "id": "964432965",
+      "firstname": "Rone",
+      "lastname": "Olbre",
+      "email": "Roneo@gmail.com",
+      "phone": "0876574837",
+      "dob": "18/08/1990",
+      "healthLevel": "5",
+      "lessons": ["Pilates Training", "Yoga Training", "Strength Training"]
+    }, {
+      "id": "245687432",
+      "firstname": "Klope",
+      "lastname": "Numb",
+      "email": "KlopeNu@gmail.com",
+      "phone": "0527654633",
+      "dob": "22/09/1996",
+      "healthLevel": "2",
+      "lessons": ["TRX Training", "Zumba Training", "Strength Training"]
+    }
+  ]
+}
