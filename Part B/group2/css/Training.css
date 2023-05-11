@@ -6,10 +6,19 @@
     align-items: center;
     justify-content: space-between;
 }
-.users-container {
-	max-width: 1200px;
-	margin: 0 auto;
+#users-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    color: snow;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 30px black;
+    text-align: left;
+
 }
+
 .Training img {
     object-fit: contain;
     /*height: 50px;*/
@@ -63,6 +72,44 @@ h2{
 	justify-content: center;
 }
 
+/*********** Flashing title ***********/
+
+h5{
+    margin-top: 120px;
+    margin-bottom: 50px;
+    font-family: "Arial";
+    font-size: 70px;
+    display: flex;
+    justify-content: center;
+}
+
+h5{
+	position: relative;
+	letter-spacing: 5px;
+	color: #dddddd;
+	text-transform: uppercase;
+	width: 100%;
+	text-align: center;
+	line-height: 0.6em;
+	outline: none;
+	animation: animate 3s linear infinite;
+}
+
+@keyframes animate{
+	0%,18%,20%,50.1%,60%,65.1%,80%,90.1%,92%{
+		color: #0e3742;
+		text-shadow: none;
+	}
+	18.1%,20.1%,30%,50%,60.1%,65%,80.1%,90%,92.1%,100%{
+		color: #fff;
+		text-shadow: 0 0 10px #8395ad,
+		            0 0 20px #8395ad,
+		            0 0 40px #8395ad,
+		            0 0 80px #8395ad,
+		            0 0 160px #8395ad;
+
+	}
+}
 
 /* for heading and bottom */
 
@@ -351,8 +398,9 @@ section p{
 
 body{
     /*min-height: 100vh;*/
-    background-color: papayawhip;
-    background-color: rgba(255, 239, 213, 0.7);
+    /*background-color: papayawhip;*/
+    /*background-color: rgba(255, 239, 213, 0.7);*/
+    background: url("../pics/trainers_background.jpg") no-repeat;
     background-size:cover;
     background-attachment: fixed;
     height: 100%;
@@ -361,3 +409,4 @@ body{
     overflow-x: hidden;
     height: calc(100vh - 100px);
 }
+
