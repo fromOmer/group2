@@ -1,8 +1,7 @@
 //invalid values in the registration //
 const form = document.querySelector('.contact-form');
-// Get references to the form and the inputs
-    const customerID = document.querySelector("#ID");
-    const customerEmail = document.querySelector("#Email");
+const customerID = document.querySelector("#ID");
+const customerEmail = document.querySelector("#Email");
    form.addEventListener("submit",function(event) {
     event.preventDefault();
 

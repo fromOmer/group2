@@ -51,7 +51,7 @@ h2{
     text-align: center;
     width:100% ;
     font-weight: 200;
-    font-size: 1.7em;
+    font-size: 1.8em;
     text-transform: UPPERCASE;
     margin-bottom: 10px;
     margin-top: 20px;
@@ -63,7 +63,6 @@ h2{
 	padding: 0;
     box-sizing: border-box;
     font-family: Geneva, Verdana, sans-serif;
-    font-weight: bolder;
 }
 
 .Training p {
@@ -82,9 +81,6 @@ h5{
     font-size: 70px;
     display: flex;
     justify-content: center;
-}
-
-h5{
 	position: relative;
 	letter-spacing: 5px;
 	color: #dddddd;

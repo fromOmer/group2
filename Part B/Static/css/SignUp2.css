@@ -12,7 +12,7 @@ body{
 }
 
 .wrapper{
-    width: 330px;
+    width: 400px;
     padding: 1rem 1rem;
     margin-top: 50px;
     margin-bottom: 50px;
@@ -66,7 +66,7 @@ input:focus{
 }
 
 .member{
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     margin-top: 1.2rem;
     color: #5e5551;
 }
@@ -77,8 +77,8 @@ input:focus{
 }
 
 .recoverPass{
-    text-align: right;
-    font-size: 0.7rem;
+    text-align: center;
+    font-size: 0.9rem;
     color: #5e5551;
     margin: 0.3rem 1.4rem 0 0;
 }
