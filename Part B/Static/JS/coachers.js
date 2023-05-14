@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function getData() {
 
 const CoachContainer = document.getElementById("Coach-container");
-fetch("../JSON/information.json")
+fetch("../Static/JSON/information.json")
   .then(response => response.json())
   .then(data => {
     const Coach = data.Coach;

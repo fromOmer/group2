@@ -1,4 +1,4 @@
-fetch("../JSON/users.json")
+fetch("../Static/JSON/users.json")
   .then(response => response.json())
   .then(data => {
     const user = data.Users[0]; // Get the first user from the array

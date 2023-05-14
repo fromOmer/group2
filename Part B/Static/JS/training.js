@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   function getData() {
     const usersContainer = document.getElementById("users-container");
-        fetch("../JSON/information.json")
+        fetch("../Static/JSON/information.json")
           .then(response => response.json())
           .then(data => {
             const Trainings = data.Trainings;

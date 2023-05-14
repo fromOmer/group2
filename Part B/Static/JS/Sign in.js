@@ -30,7 +30,7 @@
 }
 
 async function Valid_user(ID, password) {
-    const response = await fetch("../public/JSON/information.json");
+    const response = await fetch("../Static/JSON/information.json");
     console.log(response)
     const data =await response.json();
     const found = data.trainers.find(trainer => trainer.ID === ID && trainer.password === password);
