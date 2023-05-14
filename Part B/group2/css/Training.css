@@ -10,7 +10,7 @@
     max-width: 1200px;
     margin: 0 auto;
     color: snow;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(149, 190, 250, 0.15);
     margin-bottom: 20px;
     border-radius: 10px;
     text-align: center;
@@ -28,6 +28,7 @@
     height: 300px;
     padding: 20px;
 }
+
 @media screen and (max-width: 1000px) {
   Training img {
     display: none;
@@ -400,7 +401,7 @@ body{
     /*min-height: 100vh;*/
     /*background-color: papayawhip;*/
     /*background-color: rgba(255, 239, 213, 0.7);*/
-    background: url("../pics/trainers_background.jpg") no-repeat;
+    background: url("../pics/our-classes-background.jpeg") no-repeat;
     background-size:cover;
     background-attachment: fixed;
     height: 100%;

@@ -9,7 +9,7 @@
 
 .topBar {
 	background-color: #5e5551;
-    margin-top: 0px;
+    margin: 0px;
 	overflow: hidden;
 	display: flex;
 	justify-content: center;
@@ -313,6 +313,7 @@ section p{
 
 .profile-items {
     margin: 10px;
+    text-align: center;
 }
 
 .lesson-list {

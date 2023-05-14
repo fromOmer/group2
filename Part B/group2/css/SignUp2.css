@@ -372,3 +372,20 @@ nav img{
 #Health\ level{
     width: 80px;
 }
+
+.sign-in-form #email_error, .sign-in-form #id_error,
+.sign-in-form #lName_error, .sign-in-form #fName_error,
+.sign-in-form #pass_error {
+    margin-top: -4px;
+    margin-bottom: 15px;
+    width: 90%;
+    margin-left: 15px;
+    font-size: 16px;
+    color: darkred;
+    background: rgba(255,0,0,0.2);
+    text-align: center;
+    padding: 5px 8px;
+    border-radius: 3px;
+    border: 1px solid red;
+    display: none;
+}

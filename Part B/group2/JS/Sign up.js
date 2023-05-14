@@ -6,11 +6,22 @@ const passwordInput = document.querySelector('#password');
 const firstNameInput = document.querySelector('#First-Name');
 const lastNameInput = document.querySelector('#Last-Name');
 const emailInput = document.querySelector('#Email');
+const idInput = document.querySelector('#ID');
 
 // Define regular expressions for validation
 var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/;
 var nameRegex = /^[a-zA-Z]+$/;
 var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// Define error messages
+var id_error = document.getElementById('id_error');
+var email_error = document.getElementById('email_error');
+var pass_error = document.getElementById('pass_error');
+var fName_error = document.getElementById('fName_error');
+var lName_error = document.getElementById('lName_error');
+
+
+
 
 // Add event listeners for form submission
 form.addEventListener('submit', function(event) {
@@ -24,7 +35,6 @@ form.addEventListener('submit', function(event) {
     }, 500);
   }
   else{
-    alert("Invalid details, Please check again your details");
   }
 });
 
@@ -76,7 +86,7 @@ function validateID() {
   const id = document.querySelector('#ID').value;
   const regexID = /\b\d{8}\b/;
   if (!regexID.test(id)) {
-    alert("ID must be 8 digits long.");
+    id_error.style.display="block";
     return false;
   }
   return true;

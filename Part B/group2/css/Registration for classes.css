@@ -1,7 +1,7 @@
 
 body{
     /*min-height: 100vh;*/
-    background-color: papayawhip;
+    background: url("../pics/register_class_background.png") no-repeat;
     background-size:cover;
     background-attachment: fixed;
     height: 100%;
@@ -16,7 +16,6 @@ body{
     bottom: 0px;
     box-sizing: border-box;
     font-family: Geneva, Verdana, sans-serif;
-    background-color: papayawhip;
 }
 
 .container {
@@ -26,6 +25,18 @@ body{
     justify-content: center;
 }
 
+.form-container{
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px black;
+    padding: 20px;
+    margin: 20px;
+    margin-top: 40px;
+    width: 50%; /* Set the width of the form container div */
+    float: left; /* Float the form container div to the left */
+
+}
+
 .form-container form {
 	flex-basis: 100%;
 	padding: 30px;
@@ -33,7 +44,7 @@ body{
 
 select {
 	display: block;
-	width: 100%;
+	width: 40%;
 	padding: 10px;
 	margin-bottom: 20px;
 	border: 1px solid #e46c74;
@@ -42,14 +53,17 @@ select {
 
 .form-container label {
 	display: block;
-    font-weight: bolder;
-    font-size: 20px ;
+    font-size: 25px ;
     margin-top: 10px;
+    color: snow;
+    font-weight: bold;
+    font-family: Gill Sans, sans-serif;
+
 }
 
 .form-container input {
 	display: block;
-	width: 100%;
+	width: 40%;
 	padding: 10px;
 	margin-bottom: 20px;
 	border: 1px solid #e46c74;
@@ -64,6 +78,7 @@ select {
 	padding: 10px;
 	cursor: pointer;
     margin-top: 10px;
+    width: 40%;
 }
 
 .form-container input[type="submit"]:hover {
@@ -72,17 +87,19 @@ select {
 
 
 .content form h1{
-    padding-top: 5%;
+    padding: 5px;
+    font-family: Gill Sans, sans-serif;
     justify-content: left;
     width:100% ;
     font-weight: bolder;
     font-size: 3em;
     text-transform: uppercase;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
     border-bottom: 4px solid #e46c74;
     display: inline-block;
     letter-spacing: 1px;
     text-align: center;
+    color: snow;
 }
 
 .content form h4{
@@ -317,10 +334,6 @@ nav img{
     .contact-logos {
         display: none;
     }
-
-    .triple-picture p{
-    font-size: 12px;
-    }
 }
 
 @media (max-width: 1050px) {
@@ -383,20 +396,31 @@ section p{
 
 .triple-picture {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     padding: 10px;
     align-items: center;
-    width: 90%;
     margin: 0 auto;
     height: 100px;
     margin-bottom: 20px;
+    float: right; /* Float the triple picture div to the right */
 
 }
 
 
 .bottomPicture img {
-    max-width: 95%;
+    max-width: 200px;
+    margin: 5px;
     max-height: 150px;
     border:2px solid black;
     border-radius: 10px;
+}
+
+@media (max-width: 1000px) {
+    .triple-picture {
+        display: none;
+    }
+
+    .content .formbx .container .form-container h1{
+        font-size: 20px;
+    }
 }

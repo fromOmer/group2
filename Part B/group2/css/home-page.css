@@ -64,22 +64,30 @@ container{
 
 /*!*********** Flashing title ***********!*/
 
-h5{
+.titles h5{
     margin-top: 200px;
     font-size: 60px;
-    font-family: 'Arial Black', sans-serif;
+    font-family: Gill Sans, sans-serif;
     display: flex;
     justify-content: center;
     color: #e46c74;
-    animation: flashTitle 8s infinite;
-}
-
-h5{
 	position: relative;
 	letter-spacing: 15px;
 	text-transform: uppercase;
 	width: 100%;
 	line-height: 0.70em;
+}
+
+.titles h4{
+    margin-top: 20px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    color: #e46c74;
+    font-family: Gill Sans, sans-serif;
+	text-transform: uppercase;
+	width: 100%;
+
 }
 
 /*********** NAV BAR ***********/
@@ -279,6 +287,8 @@ nav img{
 
 /*********** FOOTER ***********/
 footer{
+        box-shadow: 30px 30px 30px black;
+
 }
 
 .map{
@@ -461,6 +471,7 @@ section p{
     margin: 0 auto;
     height: 200px;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .triple-picture .bottomPicture p{
@@ -487,7 +498,7 @@ section p{
     margin: 5%;
     text-align: center;
     font-size: 25px;
-    font-family: Calibri, sans-serif;
+    font-family: 'Calibri', sans-serif;
     color: black;
     font-weight: bold;
     -webkit-text-stroke: .5px white; /* width and color */

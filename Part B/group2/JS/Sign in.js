@@ -13,6 +13,9 @@
                     alert("You are now logged in and redirected to home page.");
                     Go_to_Home_Page();
                 } else {
+                    password.style.border ="1px solid red";
+                    password.error.style.display="block";
+                    password.focus();
                     alert("Invalid details, Please check again your ID and password");
                 }
             })
