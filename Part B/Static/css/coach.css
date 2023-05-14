@@ -32,19 +32,7 @@
     display: none;
   }
 }
- h1{
-   padding-top: 5%;
-    justify-content: center;
-    width:100% ;
-    font-weight: bolder;
-    font-size: 3em;
-    text-transform: uppercase;
-    margin-bottom: 50px;
-    letter-spacing: 1px;
-    text-align: center;
-     color: #e0d9d0;
-     font-family: '.AppleSystemUIFont', sans-serif;
-}
+
 h2{
     justify-content: center;
     text-align: center;
@@ -81,9 +69,6 @@ h5{
     font-size: 70px;
     display: flex;
     justify-content: center;
-}
-
-h5{
 	position: relative;
 	letter-spacing: 5px;
 	color: #dddddd;
