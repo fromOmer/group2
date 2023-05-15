@@ -38,3 +38,8 @@ async function Valid_user(ID, password) {
     return found !== undefined;
 
 }
+
+sessionStorage.setItem('ID', customerID);
+var customerID = sessionStorage.getItem('ID');
+console.log(customerID);
+
