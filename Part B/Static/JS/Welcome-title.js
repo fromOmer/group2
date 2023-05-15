@@ -3,8 +3,8 @@
 function welcomingTitle() {
     let date = new Date();
     let hours = date.getHours();
-        console.log(date);
-        console.log(hours);
+     //   console.log(date);
+      //  console.log(hours);
     if (5 < hours && hours < 11) {
         document.querySelector('.topBar').innerHTML = "Welcome, Good Morning";
     }

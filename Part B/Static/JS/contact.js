@@ -1,4 +1,6 @@
 //invalid values in the registration //
+
+
 const form = document.querySelector('.contact-form');
 const customerID = document.querySelector("#ID");
 const customerEmail = document.querySelector("#Email");
@@ -29,10 +31,10 @@ const customerEmail = document.querySelector("#Email");
 
 async function Valid_user(ID, email) {
     const response = await fetch("../Static/JSON/information.json");
-    console.log(response)
+    //console.log(response)
     const data =await response.json();
     const found = data.trainers.find(trainer => trainer.ID === ID && trainer.email === email);
-    console.log('Customer found:', found);
+   // console.log('Customer found:', found);
     return found !== undefined;
 
 }

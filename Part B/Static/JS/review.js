@@ -3,11 +3,10 @@ const form = document.querySelector('.form-container');
 // Get references to the form and the inputs
     const customerID = document.querySelector("#ID");
     const customerEmail = document.querySelector("#Email");
-    console.log(customerID)
-console.log(customerEmail)
+    //console.log(customerID)
+    //console.log(customerEmail)
    form.addEventListener("submit",function(event) {
     event.preventDefault();
-
     const ID = customerID.value;
     const email= customerEmail.value;
     Valid_user(ID, email)
