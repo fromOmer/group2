@@ -17,6 +17,7 @@ const createNewUser = (req,res)=> {
         "password": req.body.password,
         "Health": req.body.Healthlevel
     }
+    console.log(req.body);
     //create sql query
     const Q1 = "insert into users set ?";
     //run the query

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/CSS/SignUp2.css">
-    <script src="/JS/Sign%20up.js"></script>
+    <script defer src="/JS/Sign%20up.js"></script>
     <script src="/JS/Welcome-title.js"> </script>
     <script src="https://kit.fontawesome.com/b39bb7fe27.js"></script>
     <link rel="icon" type="image/png" href="/pics/site_icon_small.png">
@@ -29,8 +29,8 @@
     </nav>
     <div class="wrapper">
         <h1>Sign Up</h1>
-       <form action="/createNewCustomer" method="post">
         <form class="sign-in-form">
+        <form action="/createNewCustomer" method="POST">
             <div id="id_error">Please enter a valid ID</div>
             <input type="tel" id="ID" name="ID" placeholder="Enter ID">
             <div id="fName_error">Please enter a valid first name</div>
