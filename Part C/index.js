@@ -6,6 +6,12 @@ const BodyParser = require('body-parser');
 const cookieparse = require ('cookie-parser');
 const mysql = require('./DB/db');
 const port = 3030;
+const CreateDB = require('../Part C/DB/createdb.js');
+const fs = require('fs');
+const stringify = require('csv-stringify').stringify;
+const { parse } = require("csv-parse");
+const CSVToJSON = require('csvtojson');
+const CRUD_USER = require('./DB/CRUD-USERS');
 
 app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({extended:true}));
@@ -13,8 +19,10 @@ app.use(BodyParser.urlencoded({extended:true}));
 app.use(cookieparse());
 app.set('view engine','pug');
 
+
 app.use(express.static(path.join(__dirname, "static"))); // find the folder static
 app.set ('views', path.join(__dirname,'views'));
+
 
 //routing
 app.get('/',(req,res)=>{
@@ -29,8 +37,55 @@ app.get('/Sign_in',(req,res)=>{
 });
 
 app.get('/Sign_up',(req,res)=>{
-   res.sendfile(path.join (__dirname,"views/Sign-Up.html"));
+     res.sendfile(path.join (__dirname,"views/Sign-Up.html"));
 });
+
+app.get('/classes',(req,res)=>{
+   res.sendfile(path.join (__dirname,"views/Training.html"));
+});
+
+app.get('/Registaration',(req,res)=>{
+   res.sendfile(path.join (__dirname,"views/Registration for classes.html"));
+});
+
+app.get('/Contact',(req,res)=>{
+   res.sendfile(path.join (__dirname,"views/Contact-us.html"));
+});
+app.get('/Table-classes',(req,res)=>{
+   res.sendfile(path.join (__dirname,"views/Table of classes.html"));
+});
+
+app.get('/my-profile',(req,res)=>{
+   res.sendfile(path.join (__dirname,"views/User profile.html"));
+});
+app.get('/Review',(req,res)=>{
+   res.sendfile(path.join (__dirname,"views/Review.html"));
+});
+
+
+// Creating the DB
+app.get ('/DROP_users',CreateDB.DROP_users );
+app.get ('/create_Trainings',CreateDB.create_Trainings );
+app.get ('/CreateTable_users',CreateDB.CreateTable_users );
+app.get ('/create_coachers',CreateDB.create_coachers );
+app.get ('/InsertData_Trainings',CreateDB.InsertData_Trainings );
+app.get ('/InsertData_coachers',CreateDB.InsertData_coachers );
+app.get ('/InsertData_users',CreateDB.InsertData_users );
+app.get ('/Show_Training',CreateDB.Show_Training );
+app.get ('/Show_Coachers',CreateDB.Show_Coachers );
+app.get ('/Show_users',CreateDB.Show_users );
+
+
+//adding new users , review , contact us ..
+
+  app.post("/createNewCustomer", CRUD_USER.createNewUser);
+
+
+
+
+
+
+
 
 //set up listen
 app.listen(port ,()=> {

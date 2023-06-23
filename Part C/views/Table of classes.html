@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../Static/css/Table%20of%20classes.css">
-    <script src="../Static/JS/contact.js"></script>
+    <link rel="stylesheet" href="/CSS/Table%20of%20classes.css">
+    <script defer src="/JS/contact.js"></script>
+     <script defer src="/JS/training-schedule.js"></script>
+     <script defer src="/JS/Welcome-title.js"> </script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="https://kit.fontawesome.com/b39bb7fe27.js"></script>
-    <link rel="icon" type="image/png" href="../Static/pics/site_icon_small.png">
+    <link rel="icon" type="image/png" href="/pics/site_icon_small.png">
     <title>Table of Classes</title>
-    <script src="../Static/JS/contact.js"></script>
 </head>
 
 <body onload="welcomingTitle()">
@@ -19,14 +20,15 @@
         <label for="check" class="checkbtn">
             <i class="fas fa-bars"></i>
         </label>
-        <img src="../Static/pics/flow%20big.png" alt="Navigation Bar Logo" class = "navBarLogo">
+        <img src="/pics/flow%20big.png" alt="Navigation Bar Logo" class = "navBarLogo">
         <ul>
-            <li><a href="Home-page.html">Home</a></li>
-            <li><a href="Coach.html">FLOW coaches </a></li>
-            <li><a href="Training.html">FLOW classes</a></li>
-            <li><a href="/Table of classes.html">FLOW week schedule</a></li>
-            <li><a href="Contact-us.html">Contact us</a></li>
-            <li><a href="User%20profile.html">My Profile</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/Coach">FLOW coaches </a></li>
+            <li><a href="/classes">FLOW classes</a></li>
+            <li><a href="/Table-classes">FLOW week schedule</a></li>
+            <li><a href="/Contact">Contact us</a></li>
+            <li><a href="/my-profile">My Profile</a></li>
+             <li><a href="/Sign_in">Sign In/Sign Up</a></li>
         </ul>
     </nav>
     <div class="content_table">
@@ -35,7 +37,7 @@
         <p> It's important to keep in mind that the trainings and times will vary every week.</p>
         <br>
         <p>To participate, please make sure to register for the training by filling out the registration form.</p>
-        <p> Click here: <button class="button" data-url="Registration for classes.html">Register to class</button>
+        <p> Click here: <button class="button" data-url="/Registaration">Register to class</button>
         </p>
         <table id="schedule-table">
             <thead>
@@ -159,7 +161,7 @@
                         <div class="map">
                             <h4> Navigate now: </h4>
                             <a class="nav-link" href="https://goo.gl/maps/xVGp2tQbnvNwgWsX6" target="_blank">
-                                <img src="../Static/pics/map.png" width="180" height="70" >
+                                <img src="/pics/map.png" width="180" height="70" >
                             </a>
                         </div>
                     </div>
@@ -189,7 +191,6 @@
                 </div>
             </div>
         </footer>
-        <script src="../Static/JS/training-schedule.js"></script>
-        <script src="../Static/JS/Welcome-title.js"> </script>
+
 </body>
 </html>

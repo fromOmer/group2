@@ -2,12 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../Static/css/Registration%20for%20classes.css">
+    <link rel="stylesheet" href="/CSS/Registration%20for%20classes.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b39bb7fe27.js"></script>
-    <link rel="icon" type="image/png" href="../Static/pics/site_icon_small.png">
+    <script defer src="/JS/review.js"></script>
+    <script defer src="/JS/Welcome-title.js"> </script>
+    <script defer src="/JS/register-class.js"> </script>
+    <link rel="icon" type="image/png" href="/pics/site_icon_small.png">
     <title>Register</title>
 </head>
 <body onload="welcomingTitle()">
@@ -17,14 +20,15 @@
         <label for="check" class="checkbtn">
             <i class="fas fa-bars"></i>
         </label>
-        <img src="../Static/pics/flow%20big.png" alt="Navigation Bar Logo" class = "navBarLogo">
+        <img src="/pics/flow%20big.png" alt="Navigation Bar Logo" class = "navBarLogo">
         <ul>
-            <li><a href="Home-page.html">Home</a></li>
-            <li><a href="Coach.html">FLOW coaches </a></li>
-            <li><a href="Training.html">FLOW classes</a></li>
-            <li><a href="Table%20of%20classes.html">FLOW week schedule</a></li>
-            <li><a href="Contact-us.html">Contact us</a></li>
-            <li><a href="User%20profile.html">My Profile</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/Coach">FLOW coaches </a></li>
+            <li><a href="/classes">FLOW classes</a></li>
+            <li><a href="/Table-classes">FLOW week schedule</a></li>
+            <li><a href="/Contact">Contact us</a></li>
+            <li><a href="/my-profile">My Profile</a></li>
+             <li><a href="/Sign_in">Sign In/Sign Up</a></li>
         </ul>
     </nav>
     <br><br><br>
@@ -35,13 +39,13 @@
                     <h1>Classes Registration</h1>
                     <div class="triple-picture">
                         <div class="bottomPicture">
-                            <img src="../Static/pics/yoga-class.jpeg" alt="Picture 1">
+                            <img src="/pics/yoga-class.jpeg" alt="Picture 1">
                         </div>
                         <div class="bottomPicture">
-                            <img src="../Static/pics/trx-class.jpeg" alt="Picture 2">
+                            <img src="/pics/trx-class.jpeg" alt="Picture 2">
                         </div>
                         <div class="bottomPicture">
-                            <img src="../Static/pics/zumba-class.jpeg" alt="Picture 3">
+                            <img src="/pics/zumba-class.jpeg" alt="Picture 3">
                         </div>
                     </div>
                     <br>
@@ -49,8 +53,6 @@
                         <form action="mailto:flow.studio@gmail.com" method="post" enctype="text/plain">
                                 <label for="ID">ID:</label>
                                 <input type="tel" id="ID" name="ID" placeholder="Enter your ID" required>
-                                <label for="Email">Email:</label>
-                                <input type="Email" id="Email" name="Email" placeholder="Enter your Email" required>
                                 <label for="Day">Day:</label>
                                     <select id="Day" name="Day" size="1">
                                         <option value="Sunday">Sunday</option>
@@ -92,8 +94,6 @@
 	        </div>
        </div>
     </div>
-    <script src="../Static/JS/review.js"></script>
-    <script src="../Static/JS/Welcome-title.js"> </script>
-    <script src="../Static/JS/register-class.js"> </script>
+
 </body>
 </html>

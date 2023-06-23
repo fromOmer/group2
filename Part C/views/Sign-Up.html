@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../Static/css/SignUp2.css">
+    <link rel="stylesheet" href="/CSS/SignUp2.css">
+    <script src="/JS/Sign%20up.js"></script>
+    <script src="/JS/Welcome-title.js"> </script>
     <script src="https://kit.fontawesome.com/b39bb7fe27.js"></script>
-    <link rel="icon" type="image/png" href="../Static/pics/site_icon_small.png">
+    <link rel="icon" type="image/png" href="/pics/site_icon_small.png">
     <title>Sign Up</title>
 </head>
 <body onload="welcomingTitle()">
@@ -14,31 +16,33 @@
         <label for="check" class="checkbtn">
             <i class="fas fa-bars"></i>
         </label>
-        <img src="../Static/pics/flow%20big.png" alt="Navigation Bar Logo" class = "navBarLogo">
+        <img src="/pics/flow%20big.png" alt="Navigation Bar Logo" class = "navBarLogo">
         <ul>
-            <li><a href="Home-page.html">Home</a></li>
-            <li><a href="Coach.html">FLOW coaches </a></li>
-            <li><a href="Training.html">FLOW classes</a></li>
-            <li><a href="Table%20of%20classes.html">FLOW week schedule</a></li>
-            <li><a href="Contact-us.html">Contact us</a></li>
-
+            <li><a href="/">Home</a></li>
+            <li><a href="/Coach">FLOW coaches </a></li>
+            <li><a href="/classes">FLOW classes</a></li>
+            <li><a href="/Table-classes">FLOW week schedule</a></li>
+            <li><a href="/Contact">Contact us</a></li>
+            <li><a href="/my-profile">My Profile</a></li>
+             <li><a href="/Sign_in">Sign In/Sign Up</a></li>
         </ul>
     </nav>
     <div class="wrapper">
         <h1>Sign Up</h1>
+       <form action="/createNewCustomer" method="post">
         <form class="sign-in-form">
-            <input type="tel" id="ID" placeholder="Enter ID">
             <div id="id_error">Please enter a valid ID</div>
-            <input type="text" id="First-Name" placeholder="Enter First Name">
-            <div id="fName_error">Please enter a valid ID</div>
-            <input type="text" id="Last-Name" placeholder="Enter Last Name">
-            <div id="lName_error">Please enter a valid ID</div>
-            <input type="email" id="Email" placeholder="Enter Email">
-            <div id="email_error">Please enter a valid ID</div>
-            <input type="password" id="password" placeholder="Enter Password">
-            <div id="pass_error">Please enter a valid ID</div>
+            <input type="tel" id="ID" name="ID" placeholder="Enter ID">
+            <div id="fName_error">Please enter a valid first name</div>
+            <input type="text" id="FirstName" name= "FirstName" placeholder="Enter First Name">
+            <div id="lName_error">Please enter a valid last name</div>
+            <input type="text" id="LastName" name= "LastName" placeholder="Enter Last Name">
+            <div id="email_error">Please enter a valid email</div>
+            <input type="email" id="Email" name="Email" placeholder="Enter Email">
+            <div id="pass_error">Please enter a valid password</div>
+            <input type="password" id="password" name="password" placeholder="Enter Password">
             <label for="health level">Health level:</label>
-            <select id="Health level" name="Health level" size="1">
+            <select id="Health level" name="Healthlevel" size="1">
                 <option value="1n">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -47,14 +51,14 @@
             </select>
         <input type="submit" value="Sign Up">
         <div class="member">
-            Already a member? <a href="SignIn.html">
+            Already a member? <a href="/Sign_in">
             Login Here
             </a>
         </div>
         </form>
+       </form>
     </div>
     <br><br>
-   <script src="../Static/JS/Sign%20up.js"></script>
-   <script src="../Static/JS/Welcome-title.js"> </script>
+
 </body>
 </html>
