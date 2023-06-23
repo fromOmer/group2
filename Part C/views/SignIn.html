@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/CSS/SignUp2.css">
     <script src="https://kit.fontawesome.com/b39bb7fe27.js"></script>
+    <script defer src="/JS/Sign%20in.js"></script>
+    <script defer src="/JS/Welcome-title.js"></script>
     <link rel="icon" type="image/png" href="/pics/site_icon_small.png">
-    <title>Sign Up</title>
+    <title>Sign in</title>
 </head>
 <body onload="welcomingTitle()">
     <div class="topBar"> </div>
@@ -25,36 +27,20 @@
         </ul>
     </nav>
     <div class="wrapper">
-        <h1>Sign Up</h1>
+        <h1>Sign In</h1>
         <form class="sign-in-form">
             <input type="tel" id="ID" placeholder="Enter ID">
-            <div id="id_error">Please enter a valid ID</div>
-            <input type="text" id="First-Name" placeholder="Enter First Name">
-            <div id="fName_error">Please enter a valid ID</div>
-            <input type="text" id="Last-Name" placeholder="Enter Last Name">
-            <div id="lName_error">Please enter a valid ID</div>
-            <input type="email" id="Email" placeholder="Enter Email">
-            <div id="email_error">Please enter a valid ID</div>
             <input type="password" id="password" placeholder="Enter Password">
-            <div id="pass_error">Please enter a valid ID</div>
-            <label for="health level">Health level:</label>
-            <select id="Health level" name="Health level" size="1">
-                <option value="1n">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-        <input type="submit" value="Sign Up">
+            <div class="recoverPass">
+                Forgot Password? <a href="Contact-us.html">Contact us.</a>
+            </div>
+        <button>Sign in</button>
         <div class="member">
-            Already a member? <a href="SignIn.html">
-            Login Here
+            Not a member? <a href="Sign-Up.html">
+            Sign-up Here
             </a>
         </div>
         </form>
     </div>
-    <br><br>
-   <script src="../JS/Sign%20up.js"></script>
-   <script src="../JS/Welcome-title.js"> </script>
 </body>
 </html>
