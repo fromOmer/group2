@@ -20,8 +20,17 @@ app.set ('views', path.join(__dirname,'views'));
 app.get('/',(req,res)=>{
    res.sendfile(path.join (__dirname,"views/Home-page.html"));
 });
+app.get('/Coach',(req,res)=>{
+   res.sendfile(path.join (__dirname,"views/Coach.html"));
+});
 
+app.get('/Sign_in',(req,res)=>{
+   res.sendfile(path.join (__dirname,"views/SignIn.html"));
+});
 
+app.get('/Sign_up',(req,res)=>{
+   res.sendfile(path.join (__dirname,"views/Sign-Up.html"));
+});
 
 //set up listen
 app.listen(port ,()=> {

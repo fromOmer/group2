@@ -1,4 +1,4 @@
-id,first_name,last_name,email,password,health
+id,firstname,lastname,email,password,health
 1,shahar,baruch,demo@gmail.com,Qw!23456,5
 2,omer,form,demo1@gmail.com,Qw!23456,5
 3,yafa,shalom,yafa@gmail.com,Qw!23456,5
