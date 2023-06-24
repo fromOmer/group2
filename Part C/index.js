@@ -6,7 +6,7 @@ const BodyParser = require('body-parser');
 const cookieparse = require ('cookie-parser');
 const mysql = require('./DB/db');
 const port = 3030;
-const CreateDB = require('../Part C/DB/createdb.js');
+const CreateDB = require('./DB/createdb.js');
 const fs = require('fs');
 const stringify = require('csv-stringify').stringify;
 const { parse } = require("csv-parse");
@@ -26,40 +26,40 @@ app.set ('views', path.join(__dirname,'views'));
 
 //routing
 app.get('/',(req,res)=>{
-   res.sendfile(path.join (__dirname,"views/Home-page.html"));
+   res.sendFile(path.join (__dirname,"views/Home-page.html"));
 });
 app.get('/Coach',(req,res)=>{
-   res.sendfile(path.join (__dirname,"views/Coach.html"));
+   res.sendFile(path.join (__dirname,"views/Coach.html"));
 });
 
 app.get('/Sign_in',(req,res)=>{
-   res.sendfile(path.join (__dirname,"views/SignIn.html"));
+   res.sendFile(path.join (__dirname,"views/SignIn.html"));
 });
 
-app.get('/Sign_up',(req,res)=>{
-     res.sendfile(path.join (__dirname,"views/Sign-Up.html"));
+app.get('/Sign_up-new',(req,res)=>{
+     res.sendFile(path.join (__dirname,"try/Sign-Up-new.html"));
 });
 
 app.get('/classes',(req,res)=>{
-   res.sendfile(path.join (__dirname,"views/Training.html"));
+   res.sendFile(path.join (__dirname,"views/Training.html"));
 });
 
 app.get('/Registaration',(req,res)=>{
-   res.sendfile(path.join (__dirname,"views/Registration for classes.html"));
+   res.sendFile(path.join (__dirname,"views/Registration for classes.html"));
 });
 
 app.get('/Contact',(req,res)=>{
-   res.sendfile(path.join (__dirname,"views/Contact-us.html"));
+   res.sendFile(path.join (__dirname,"views/Contact-us.html"));
 });
 app.get('/Table-classes',(req,res)=>{
-   res.sendfile(path.join (__dirname,"views/Table of classes.html"));
+   res.sendFile(path.join (__dirname,"views/Table of classes.html"));
 });
 
 app.get('/my-profile',(req,res)=>{
-   res.sendfile(path.join (__dirname,"views/User profile.html"));
+   res.sendFile(path.join (__dirname,"views/User profile.html"));
 });
 app.get('/Review',(req,res)=>{
-   res.sendfile(path.join (__dirname,"views/Review.html"));
+   res.sendFile(path.join (__dirname,"views/Review.html"));
 });
 
 
@@ -78,7 +78,7 @@ app.get ('/Show_users',CreateDB.Show_users );
 
 //adding new users , review , contact us ..
 
-  app.post("/createNewCustomer", CRUD_USER.createNewUser);
+app.post("/createNewCustomer", CRUD_USER.createNewUser);
 
 
 

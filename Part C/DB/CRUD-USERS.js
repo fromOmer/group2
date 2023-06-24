@@ -2,6 +2,7 @@ const mysql = require("./db");
 const path = require("path");
 
 
+
 const createNewUser = (req,res)=> {
     //validate that body is not empty
     if (!req.body) {
@@ -16,22 +17,24 @@ const createNewUser = (req,res)=> {
         "email": req.body.Email,
         "password": req.body.password,
         "Health": req.body.Healthlevel
-    }
-    console.log(req.body);
+    };
+    console.log(NewUser);
     //create sql query
-    const Q1 = "insert into users set ?";
+    const Q1 = "INSERT INTO users SET ?";
     //run the query
     mysql.query(Q1, NewUser, (err, mysqlres) => {
         if (err) {
             console.log("error in running query insert users via form", err);
+                    console.log(req.body);
             res.status(400).send({message: "Sign up Filed , Please contact us"});
             return;
         }
+        console.log(req.body);
         console.log("created user, user id:", {id: mysqlres.insertId});
         res.send("you have signed up");
-        res.sendfile(path.join(__dirname, "../views/Home-page.html"));
+        res.sendFile(path.join(__dirname, "../views/Home-page.html"));
         return;
-    });
+    })
 };
 
 
