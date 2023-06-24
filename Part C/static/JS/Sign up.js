@@ -1,10 +1,11 @@
 //invalid values in the sign_up //
 
+
 // Get references to the form and the inputs
 const form = document.querySelector('.sign-in-form');
 const passwordInput = document.querySelector('#password');
-const firstNameInput = document.querySelector('#First-Name');
-const lastNameInput = document.querySelector('#Last-Name');
+const firstNameInput = document.querySelector('#FirstName');
+const lastNameInput = document.querySelector('#LastName');
 const emailInput = document.querySelector('#Email');
 const idInput = document.querySelector('#ID');
 
@@ -31,7 +32,8 @@ form.addEventListener('submit', function(event) {
   if (validateID() && validateFirstName() && validateLastName() && validateEmail() && validatePassword()) {
     setTimeout(function () {
       alert("You are now registered and redirected to sign in page");
-      window.location.href = "SignIn.html";
+    //  window.location.href = "/";
+
     }, 500);
   }
   else{
@@ -86,7 +88,8 @@ function validateID() {
   const id = document.querySelector('#ID').value;
   const regexID = /\b\d{8}\b/;
   if (!regexID.test(id)) {
-    id_error.style.display="block";
+        alert('Please enter a valid ID');
+
     return false;
   }
   return true;

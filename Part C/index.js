@@ -7,11 +7,11 @@ const cookieparse = require ('cookie-parser');
 const mysql = require('./DB/db');
 const port = 3030;
 const CreateDB = require('./DB/createdb.js');
+const CRUD_TRY = require('./DB/CRUD-users.js');
 const fs = require('fs');
 const stringify = require('csv-stringify').stringify;
 const { parse } = require("csv-parse");
 const CSVToJSON = require('csvtojson');
-const CRUD_USER = require('./DB/CRUD-USERS');
 
 app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({extended:true}));
@@ -36,8 +36,8 @@ app.get('/Sign_in',(req,res)=>{
    res.sendFile(path.join (__dirname,"views/SignIn.html"));
 });
 
-app.get('/Sign_up-new',(req,res)=>{
-     res.sendFile(path.join (__dirname,"try/Sign-Up-new.html"));
+app.get('/Sign_up',(req,res)=>{
+     res.sendFile(path.join (__dirname,"views/Sign-Up.html"));
 });
 
 app.get('/classes',(req,res)=>{
@@ -78,10 +78,9 @@ app.get ('/Show_users',CreateDB.Show_users );
 
 //adding new users , review , contact us ..
 
-app.post("/createNewCustomer", CRUD_USER.createNewUser);
-
-
-
+//app.post("/createNewCustomer", CRUD_USER.createNewUser);
+app.post("/createNewCustomer", CRUD_TRY.createNewUser);
+app.post("/CheckUser", CRUD_TRY.FindUser);
 
 
 
