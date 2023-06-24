@@ -265,18 +265,6 @@ footer{
     width: 100%;
 }
 
-body{
-    /*min-height: 100vh;*/
-    background: url("../pics/user-background.jpeg") no-repeat;
-    background-size:cover;
-    background-attachment: fixed;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden;
-    height: calc(100vh - 100px);
-}
-
 section p{
     font-family: 'Geneva', sans-serif;
     font-size: 20px;
@@ -288,91 +276,4 @@ section p{
     margin: 10px;
     font-family: 'Geneva', sans-serif;
     color: snow;
-}
-
-/*********** BODY items ***********/
-
-.mainForm{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.user-profile {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background-color: #f2f2f2;
-    align-items: center;
-    max-width: 600px;
-    margin-top: 120px;
-    margin-bottom: 120px;
-    border-radius: 5px;
-    box-shadow: 0 10px 30px black;
-
-}
-
-.profile-items {
-    margin: 10px;
-    text-align: center;
-}
-
-.lesson-list {
-  margin: 10px;
-  list-style-type: none;
-  padding: 0;
-  text-align: center;
-}
-
-.lesson {
-  margin: 5px;
-  padding: 5px;
-  background-color: #f2f2f2;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  display: block;
-}
-
-.button-container {
-  margin: 10px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.button{
-  margin: 5px;
-  padding: 10px;
-  background-color: #978985;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.button:hover {
-  background-color: #e46c74;
-}
-
-.button:active {
-  background-color: #e46c74;
-}
-
-.profile-items .button{
-    margin: 2px;
-    padding: 3px;
-}
-
-input{
-    background-color: #e0d9d0;
-    border: none;
-}
-
-.user-icon {
-    font-size: 40px;
-    color: #e46c74;
-    line-height: 60px;
-    margin: 0px;
 }
