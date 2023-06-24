@@ -1,0 +1,28 @@
+extends layout
+
+block topContent
+  meta(charset='UTF-8')
+  script(defer='' src='/JS/layout.js')
+  .mainForm
+    .user-profile
+      label.user-icon
+        i.fa-solid.fa-user
+      .profile-items
+        h1 #{variable1}
+        br
+        label #{variable2}
+        br
+        label #{variable3}
+      br
+      br
+      br
+      label.user-icon
+        i.fa-solid.fa-medal
+      .lesson-list
+        h4 Your Upcoming Lessons
+        ul.lessons
+      .button-container
+        button.button(data-url='/Review') Review Class
+        button.button(data-url='/Contact') Update Profile
+        button.button(data-url='/Contact') Cancel Membership
+block content

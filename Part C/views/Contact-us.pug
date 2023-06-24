@@ -1,0 +1,30 @@
+extends layout
+
+block topContent
+  head
+    meta(charset='UTF-8')
+    link(rel='stylesheet' href='/CSS/contact.css')
+    script(defer='' src='/JS/Welcome-title.js')
+    script(defer='' src='/JS/contact.js')
+    title Contact us
+  .wrapper
+    h1 Contact us
+    form.contact-form
+      form(action='mailto:flow.studio@gmail.com' method='post' enctype='text/plain')
+        label.request(for='request') Select request topic:
+        select#request(name='request' size='1')
+          option(value='Forget your password') Forget your password
+          option(value='Help with registration') Help with registration
+          option(value='Explanation of the studio') Explanation of the studio
+          option(value='Update my profile') Update my profile
+          option(value='Technical problems') Technical problems
+          option(value='Talk to a representative') Talk to a representative
+          option(value='Membership cancellation') Membership cancellation
+          option(value='Training sessions help') Training sessions help
+          option(value='Other') Other
+        label(for='description') Description:
+        textarea#description(name='description' required='')
+        .form-submit
+          input(type='submit' value='Send')
+  script(src='#')
+block content

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+        <script defer src="/JS/Sign%20in.js"></script>
     <link rel="stylesheet" href="/CSS/Table%20of%20classes.css">
     <script defer src="/JS/contact.js"></script>
      <script defer src="/JS/training-schedule.js"></script>
@@ -27,8 +28,8 @@
             <li><a href="/classes">FLOW classes</a></li>
             <li><a href="/Table-classes">FLOW week schedule</a></li>
             <li><a href="/Contact">Contact us</a></li>
-            <li><a href="/my-profile">My Profile</a></li>
-             <li><a href="/Sign_in">Sign In/Sign Up</a></li>
+            <li id="greeting-button"><a href="/my-profile">My Profile</a></li>
+            <li id="sign-in-button"><a href="/Sign_in">Sign In/Sign Up</a></li>
         </ul>
     </nav>
     <div class="content_table">
@@ -37,8 +38,10 @@
         <p> It's important to keep in mind that the trainings and times will vary every week.</p>
         <br>
         <p>To participate, please make sure to register for the training by filling out the registration form.</p>
-        <p> Click here: <button class="button" data-url="/Registaration">Register to class</button>
+        <p> Click here: <button id="registrate" class="button" data-url="/Registaration">Register to class</button>
         </p>
+        <p>Note: You can not register to class if you are not sign in,please Sign in.</p>
+
         <table id="schedule-table">
             <thead>
                 <tr>

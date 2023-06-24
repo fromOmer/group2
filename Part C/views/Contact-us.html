@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script defer src="/JS/Sign%20in.js"></script>
     <link rel="stylesheet" href="/CSS/contact.css">
     <script defer src="/JS/Welcome-title.js"> </script>
     <script defer  src="/JS/contact.js"></script>
@@ -11,37 +12,37 @@
 </head>
 <body onload="welcomingTitle()">
     <div class="topBar"> </div>
-    <nav>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-            <i class="fas fa-bars"></i>
-        </label>
-        <img src="/pics/flow%20big.png" alt="Navigation Bar Logo" class = "navBarLogo">
-        <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/Coach">FLOW coaches </a></li>
-        <li><a href="/classes">FLOW classes</a></li>
-        <li><a href="/Table-classes">FLOW week schedule</a></li>
-        <li><a href="/Contact">Contact us</a></li>
-        <li><a href="/my-profile">My Profile</a></li>
-        <li><a href="/Sign_in">Sign In/Sign Up</a></li>
-        </ul>
-    </nav>
+        <nav>
+            <input type="checkbox" id="check">
+                <label for="check" class="checkbtn">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <img src="/pics/flow%20big.png" alt="Navigation Bar Logo" class = "navBarLogo">
+                <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/Coach">FLOW coaches </a></li>
+                <li><a href="/classes">FLOW classes</a></li>
+                <li><a href="/Table-classes">FLOW week schedule</a></li>
+                <li><a href="/Contact">Contact us</a></li>
+                <li id="greeting-button"><a href="/my-profile">My Profile</a></li>
+                <li id="sign-in-button"><a href="/Sign_in">Sign In/Sign Up</a></li>
+                </ul>
+        </nav>
     <div class="wrapper">
         <h1>Contact us</h1>
         <form class="contact-form">
             <form action="mailto:flow.studio@gmail.com" method="post" enctype="text/plain">
                     <label for="request" class="request">Select request topic:</label>
                     <select id="request" name="request" size="1">
-                        <option value="Forget your password">Forget your password</option>
-                        <option value="Help with registration">Help with registration</option>
-                        <option value="Explanation of the studio">Explanation of the studio</option>
-                        <option value="Update my profile">Update my profile</option>
-                        <option value="Technical problems">Technical problems</option>
-                        <option value="Talk to a representative">Talk to a representative</option>
-                        <option value="Membership cancellation">Membership cancellation</option>
-                        <option value="Training sessions help">Training sessions help</option>
-                        <option value="Other">Other</option>
+                            <option value="Forget your password">Forget your password</option>
+                            <option value="Help with registration">Help with registration</option>
+                            <option value="Explanation of the studio">Explanation of the studio</option>
+                            <option value="Update my profile">Update my profile</option>
+                            <option value="Technical problems">Technical problems</option>
+                            <option value="Talk to a representative">Talk to a representative</option>
+                            <option value="Membership cancellation">Membership cancellation</option>
+                            <option value="Training sessions help">Training sessions help</option>
+                            <option value="Other">Other</option>
                     </select>
                     <label for="description">Description:</label>
                     <textarea id="description" name="description" required></textarea>

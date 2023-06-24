@@ -1,0 +1,23 @@
+extends layout
+
+block topContent
+  head
+    meta(charset='UTF-8')
+    link(rel='stylesheet' href='/CSS/SignUp2.css')
+    title Sign in
+    .wrapper
+      h1 Sign In
+      form.sign-in-form(action='/CheckUser' method='post')
+        label(for='ID') Please enter your ID
+        input#ID(type='tel' name='ID' placeholder='Enter ID' required='')
+        label(for='password') Please enter your password
+        input#password(type='password' name='password' placeholder='Enter Password' required='')
+        .recoverPass
+          | Forgot Password?
+          a(href='/Contact') Contact us.
+        button Sign in
+        .member
+          | Not a member?
+          a(href='/Sign_up')
+            | Sign-up Here
+block content

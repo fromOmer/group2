@@ -12,55 +12,72 @@ const fs = require('fs');
 const stringify = require('csv-stringify').stringify;
 const { parse } = require("csv-parse");
 const CSVToJSON = require('csvtojson');
+const csv = require("csvtojson");
+
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'));
 
 app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({extended:true}));
 //const CRUD =require('./DB/CRUD');
 app.use(cookieparse());
-app.set('view engine','pug');
+
 
 
 app.use(express.static(path.join(__dirname, "static"))); // find the folder static
-app.set ('views', path.join(__dirname,'views'));
 
 
 //routing
-app.get('/',(req,res)=>{
-   res.sendFile(path.join (__dirname,"views/Home-page.html"));
-});
-app.get('/Coach',(req,res)=>{
-   res.sendFile(path.join (__dirname,"views/Coach.html"));
+app.get('/', (req, res) => {
+   res.render('Home-page');
 });
 
-app.get('/Sign_in',(req,res)=>{
-   res.sendFile(path.join (__dirname,"views/SignIn.html"));
+
+//app.get('/Coach', (req, res) => {
+//   res.render('Coach');
+//});
+
+app.get('/Sign_in', (req, res) => {
+   res.render('SignIn');
 });
 
-app.get('/Sign_up',(req,res)=>{
-     res.sendFile(path.join (__dirname,"views/Sign-Up.html"));
+app.get('/Sign_up', (req, res) => {
+   res.render('Sign-Up');
 });
 
-app.get('/classes',(req,res)=>{
-   res.sendFile(path.join (__dirname,"views/Training.html"));
+app.get('/classes', (req, res) => {
+   res.render('Training');
 });
 
-app.get('/Registaration',(req,res)=>{
-   res.sendFile(path.join (__dirname,"views/Registration for classes.html"));
+app.get('/Registaration', (req, res) => {
+   res.render('Registration for classes');
 });
 
-app.get('/Contact',(req,res)=>{
-   res.sendFile(path.join (__dirname,"views/Contact-us.html"));
-});
-app.get('/Table-classes',(req,res)=>{
-   res.sendFile(path.join (__dirname,"views/Table of classes.html"));
+app.get('/Contact', (req, res) => {
+   res.render('Contact-us');
 });
 
-app.get('/my-profile',(req,res)=>{
-   res.sendFile(path.join (__dirname,"views/User profile.html"));
+app.get('/Table-classes', (req, res) => {
+   res.render('Table of classes');
 });
-app.get('/Review',(req,res)=>{
-   res.sendFile(path.join (__dirname,"views/Review.html"));
+
+// app.get('/my-profile', (req, res) => {
+//    res.render('User profile');
+// });
+
+app.get('/Review', (req, res) => {
+   res.render('Review');
 });
+
+
+
+// Define the path to your CSV file
+const csvFilePath = './DB/coachers.csv';
+
+app.get('/Coach', (req, res) => {
+      res.render('Coach');
+});
+
 
 
 // Creating the DB
@@ -81,6 +98,7 @@ app.get ('/Show_users',CreateDB.Show_users );
 //app.post("/createNewCustomer", CRUD_USER.createNewUser);
 app.post("/createNewCustomer", CRUD_TRY.createNewUser);
 app.post("/CheckUser", CRUD_TRY.FindUser);
+app.get('/my-profile', CRUD_TRY.MyProfile);
 
 
 
