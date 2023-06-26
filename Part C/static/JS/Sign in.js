@@ -7,7 +7,6 @@ function checkCookie() {
         console.log("cookie:", document.cookie);
         greetingButton.style.display = "inline-block";
         signInButton.style.display = "none";
-
     } else {
         console.log("no cookie");
         greetingButton.style.display = "none";

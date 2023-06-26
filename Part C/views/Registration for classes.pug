@@ -5,7 +5,6 @@ block topContent
     meta(charset='UTF-8')
     script(defer='' src='/JS/register-class.js')
     link(rel='stylesheet' href='/CSS/Registration%20for%20classes.css')
-    script(defer='' src='/JS/review.js')
     title Register
   .content
     .formbx
@@ -18,36 +17,40 @@ block topContent
             .bottomPicture
               img(src='/pics/trx-class.jpeg' alt='Picture 2')
           br
-          form.form-container
-            form(action='mailto:flow.studio@gmail.com' method='post' enctype='text/plain')
-              label(for='Day') Day:
-              select#Day(name='Day' size='1')
-                option(value='Sunday') Sunday
-                option(value='Monday') Monday
-                option(value='Tuesday') Tuesday
-                option(value='Wednesday') Wednesday
-                option(value='Thursday') Thursday
-                option(value='Friday') Friday
-                option(value='Saturday') Saturday
-              label(for='time') Time:
-              select#time(name='time' size='1')
-                option(value='09:00') 9:00 AM
-                option(value='10:00') 10:00 AM
-                option(value='11:00') 11:00 AM
-                option(value='12:00') 12:00 AM
-                option(value='17:00') 17:00 AM
-                option(value='18:00') 18:00 AM
-                option(value='19:00') 19:00 AM
-                option(value='20:00') 20:00 AM
-                option(value='21:00') 21:00 AM
-              label(for='workout') Workout:
-              select#workout(name='workout')
-                option(value='Yoga Training') Yoga Training
-                option(value='Functional Training') Functional Training
-                option(value='Zumba Training') Zumba Training
-                option(value='Pilates Training') Zumba Training
-                option(value='Strength Training') Strength Training
-                option(value='TRX Training') TRX Training
-              .form-submit
-                input#submit-btn(type='submit' value='Register')
+          form.form-container(action='mailto:flow.studio@gmail.com' method='post' enctype='text/plain')
+            label(for='ID') Please enter your ID
+            input#ID(type='tel' name='ID' placeholder='Enter ID' required='')
+            label(for='Day') Day:
+            select#Day(name='Day' size='1')
+              option(value='Sunday') Sunday
+              option(value='Monday') Monday
+              option(value='Tuesday') Tuesday
+              option(value='Wednesday') Wednesday
+              option(value='Thursday') Thursday
+              option(value='Friday') Friday
+              option(value='Saturday') Saturday
+            label(for='time') Time:
+            select#time(name='time' size='1')
+              option(value='09:00') 9:00 AM
+              option(value='10:00') 10:00 AM
+              option(value='11:00') 11:00 AM
+              option(value='12:00') 12:00 AM
+              option(value='17:00') 17:00 AM
+              option(value='18:00') 18:00 AM
+              option(value='19:00') 19:00 AM
+              option(value='20:00') 20:00 AM
+              option(value='21:00') 21:00 AM
+            label(for='workout') Workout:
+            select#workout(name='workout')
+              option(value='Yoga Training') Yoga Training
+              option(value='Functional Training') Functional Training
+              option(value='Zumba Training') Zumba Training
+              option(value='Pilates Training') Zumba Training
+              option(value='Strength Training') Strength Training
+              option(value='TRX Training') TRX Training
+            .form-submit
+              input#submit-btn(type='submit' value='Register')
+
 block content
+  script.
+    checkCookie();

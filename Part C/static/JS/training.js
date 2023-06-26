@@ -1,4 +1,4 @@
-//Take a values from information json for trainings //
+/Take a values from information json for trainings //
 'use strict';
 document.addEventListener('DOMContentLoaded', function() {
   function getData() {

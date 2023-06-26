@@ -7,7 +7,14 @@ app.use(cookieparse());
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
-
+const user ={
+        "id": '',
+        "firstname": '',
+        "lastname": '',
+        "email": '',
+        "password": '',
+        "Health": ''
+};
 
 const createNewUser = (req,res)=> {
     //validate that body is not empty
@@ -15,6 +22,7 @@ const createNewUser = (req,res)=> {
         res.status(400).send({message: "content can not be empty"});
         return;
     }
+    console.log("Im in");
     //insert data to json
       const NewUser = {
         "id": req.body.ID,
@@ -59,6 +67,12 @@ const createNewUser = (req,res)=> {
                                     console.log("created new user succesfully ");
                                     console.log(req.body);
                                     res.cookie ('UserID',req.body.ID);
+                                    user.id=NewUser.id;
+                                    user.firstname=NewUser.firstname;
+                                    user.lastname=NewUser.lastname;
+                                    user.password=NewUser.password;
+                                    user.email=NewUser.email;
+                                    user.Health=NewUser.Health;
                                    // res.send('<script>alert("The User is created!"); window.location.href = "/";</script>');
                                     res.render('Home-page', { var1: "You successfully signed in" });
                                     return;
@@ -70,10 +84,6 @@ const createNewUser = (req,res)=> {
 };
 
 
-
-
-
-
 const FindUser = (req,res)=> {
     //validate that body is not empty
     if (!req.body) {
@@ -81,11 +91,11 @@ const FindUser = (req,res)=> {
         return;
     }
     //insert data to json
-    const User = {
+    const User_exists = {
         "id": req.body.ID,
         "password": req.body.password
     };
-    mysql.query("SELECT  *  FROM users where id = ?", User.id, (err, mysqlres) => {
+    mysql.query("SELECT  *  FROM users where id = ?", User_exists.id, (err, mysqlres) => {
         if (err) {
             console.log("error in getting all user " + err);
             res.status(400).send({message: "error in getting all user " + err})
@@ -96,7 +106,7 @@ const FindUser = (req,res)=> {
         return;
         }
         else {
-             mysql.query("SELECT  *  FROM users  where password like ?", User.password + "%", (err, mysqlres) => {
+             mysql.query("SELECT  *  FROM users  where password like ?", User_exists.password + "%", (err, mysqlres) => {
                 if (err)  {
                     console.log("error in getting all user " + err);
                     res.status(400).send({message: "error in getting all user " + err})
@@ -110,7 +120,13 @@ const FindUser = (req,res)=> {
                  else  {
                      console.log("User sign in successfuly" );
                      //res.render('Loginscreen', {var1:  "You successfuly sign in" });
-                         console.log(req.body);
+                                    console.log(req.body);
+                                    user.id=User_exists.id;
+                                    user.firstname=User_exists.firstname;
+                                    user.lastname=User_exists.lastname;
+                                    user.password=User_exists.password;
+                                    user.email=User_exists.email;
+                                    user.Health=User_exists.Health;
                          res.cookie ('UserID',req.body.ID);
                         res.send('<script>alert("The user is sign in "); window.location.href = "/";</script>');
                      return;
@@ -120,71 +136,98 @@ const FindUser = (req,res)=> {
     });
 };
 
-const user ={
-        "id": '',
-        "firstname": '',
-        "lastname": '',
-        "email": '',
-        "password": '',
-        "Health": ''
+
+const trainings = {
+                      "time": '',
+                      "day": '',
+                      "coacherName": '',
+                      "trainingName": ''
 };
-// const look = (req, res)=>{
-//         res.render('User profile',{
-//             firstname: user.firstname ,
-//             lastname: user.lastname ,
-//             id: user.id,
-//             Health: user.Health,
-//             password: user.password ,
-//             email: user.email,
-//             variable1: '  Hi ' + user.firstname + ' Welcome back',
-//             variable2: 'Name:'+user.firstname + user.lastname,
-//             variable3: 'Health Level:' + user.Health ,
-//             variable4: 'Your upcoming lessons'
-//         });
-//         return;
-//    };
-// Displaying the user's personal profile page
-// const MyProfile= (req, res)=>{
-//     res.render('User profile',{
-//         variable1: '  Hi ' + user.firstname + ' Welcome back',
-//         variable2: 'Name:'+user.firstname + user.lastname,
-//         variable3: 'Health Level:' + user.Health ,
-//         variable4: 'Your upcoming lessons'
-//      });
-// return;
-// };
 
-
-/////checkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
-const New=(req,res)=> {
+const MyProfile=(req,res)=> {
     //validate that body is not empty
     if (!req.body) {
         res.status(400).send({message: "content can not be empty"});
         return;
     }
-    //insert data to json
-    const User = {
-        "id": req.body.ID
-    };
-    mysql.query("SELECT  *  FROM users where id = ?", User.id, (err, mysqlres) => {
-        if (err) {
-            console.log("error in getting all user " + err);
-            res.status(400).send({message: "error in getting all user " + err})
-            return;
-        }
-        const userData = mysqlres[0];
-        const id = userData.id;
-        const lastname = userData.lastname;
-        const firstname = userData.firstname;
-        const Health = userData.Health;
-        const email = userData.email;
-        res.render('User profile', {
-            variable1: '  Hi ' + firstname + ' Welcome back',
-            variable2: 'Name:' + firstname + ' ' + lastname,
-            variable3: 'Health Level:' + Health,
-            variable4: 'Your upcoming lessons'
-        });
-        return;
-    });
+    else {
+         const query1 = "SELECT u.firstname, u.lastname, u.Health, t.time_training, t.day_training, t.training, t.Coacher_name FROM users u LEFT JOIN table_of_training t ON u.id = t.user_id WHERE u.id = ?";
+        mysql.query(query1, user.id, (err, mysqlres) => {
+                    if (err) {
+                        console.log("error in getting all user " + err);
+                        res.status(400).send({message: "error in getting all user " + err})
+                        return;
+                    }
+                    console.log(mysqlres[0]);
+                    const trainings = mysqlres.map(training => {
+                        return {
+                            "time": training.time_training,
+                            "day": training.day_training,
+                            "coacherName": training.Coacher_name,
+                            "trainingName": training.training
+                        };
+                    });
+                    console.log(trainings);
+                    res.render('User profile', {
+                        variable1: 'Hi ' + mysqlres[0].firstname + ' Welcome back',
+                        variable2: 'Name: ' + mysqlres[0].firstname + ' ' + mysqlres[0].lastname,
+                        variable3: 'Health Level: ' + mysqlres[0].Health,
+                        variable4: 'Your upcoming lessons:',
+                        variable5: trainings
+                    });
+                    return;
+                });
+                return;
+            }
 };
-module.exports= {createNewUser,FindUser,New};
+
+//
+// const MyProfile=(req,res)=> {
+//     //validate that body is not empty
+//     if (!req.body) {
+//         res.status(400).send({message: "content can not be empty"});
+//         return;
+//     }
+//     else {
+//         mysql.query("SELECT  *  FROM users where id = ?", user.id, (err, mysqlres1) => {
+//             if (err) {
+//                 console.log("error in getting all user " + err);
+//                 res.status(400).send({message: "error in getting all user " + err})
+//                 return;
+//             }
+//             else {
+//                 mysql.query("SELECT  *  FROM table_of_training where user_id = ?", user.id, (err, mysqlres) => {
+//                     console.log(mysqlres);
+//                     console.log(mysql.query);
+//                     console.log(mysqlres[0]);
+//                     if (err) {
+//                         console.log("error in getting all user " + err);
+//                         res.status(400).send({message: "error in getting all user " + err})
+//                         return;
+//                     }
+//                     console.log(mysqlres[0]);
+//                     const trainings = mysqlres.map(training => {
+//                         return {
+//                             "time": training.time_training,
+//                             "day": training.day_training,
+//                             "coacherName": training.Coacher_name,
+//                             "trainingName": training.training
+//                         };
+//                     });
+//                     console.log(trainings);
+//                     res.render('User profile', {
+//                         variable1: 'Hi ' + mysqlres1[0].firstname + ' Welcome back',
+//                         variable2: 'Name: ' + mysqlres1[0].firstname + ' ' + mysqlres1[0].lastname,
+//                         variable3: 'Health Level: ' + mysqlres1[0].Health,
+//                         variable4: 'Your upcoming lessons:',
+//                         variable5: trainings
+//                     });
+//                     return;
+//                 });
+//                 return;
+//             }
+//         });
+//     }
+// };
+
+module.exports= {createNewUser,FindUser,MyProfile};

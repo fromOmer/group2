@@ -13,6 +13,7 @@ const stringify = require('csv-stringify').stringify;
 const { parse } = require("csv-parse");
 const CSVToJSON = require('csvtojson');
 const csv = require("csvtojson");
+const {create_Trainings} = require("./DB/createdb");
 
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
@@ -63,7 +64,7 @@ app.get('/Table-classes', (req, res) => {
 
 // app.get('/my-profile', (req, res) => {
 //    res.render('User profile');
-// });
+//  });
 
 app.get('/Review', (req, res) => {
    res.render('Review');
@@ -85,12 +86,18 @@ app.get ('/DROP_users',CreateDB.DROP_users );
 app.get ('/create_Trainings',CreateDB.create_Trainings );
 app.get ('/CreateTable_users',CreateDB.CreateTable_users );
 app.get ('/create_coachers',CreateDB.create_coachers );
+app.get('/Create_table_training',CreateDB.create_table_training);
+app.get('/Insert_table_training',CreateDB.InsertData_table_training);
 app.get ('/InsertData_Trainings',CreateDB.InsertData_Trainings );
 app.get ('/InsertData_coachers',CreateDB.InsertData_coachers );
 app.get ('/InsertData_users',CreateDB.InsertData_users );
 app.get ('/Show_Training',CreateDB.Show_Training );
 app.get ('/Show_Coachers',CreateDB.Show_Coachers );
 app.get ('/Show_users',CreateDB.Show_users );
+app.get ('/Drop_table_trining',CreateDB.Drop_table_training );
+app.get ('/Show_table',CreateDB.Show_table );
+
+
 
 
 //adding new users , review , contact us ..
@@ -99,7 +106,6 @@ app.get ('/Show_users',CreateDB.Show_users );
 app.post("/createNewCustomer", CRUD_TRY.createNewUser);
 app.post("/CheckUser", CRUD_TRY.FindUser);
 app.get('/my-profile', CRUD_TRY.MyProfile);
-
 
 
 

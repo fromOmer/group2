@@ -1,34 +1,36 @@
-extends layout
-block topContent
+doctype html
+html
   head
     meta(charset='UTF-8')
     link(rel='stylesheet' href='/CSS/SignUp2.css')
     script(src='https://kit.fontawesome.com/b39bb7fe27.js')
+    script(defer='' src='/JS/Sign up.js')
     title Sign Up
-  .wrapper
-    h1 Sign Up
-    form.sign-in-form(action='/createNewCustomer' method='POST')
-      label(for='ID') Please enter your ID
-      input#ID(type='tel' name='ID' placeholder='Enter ID' required='')
-      label(for='FirstName') Please enter your First Name
-      input#FirstName(type='text' name='FirstName' placeholder='Enter First Name' required='')
-      label(for='LastName') Please enter your Last Name
-      input#LastName(type='text' name='LastName' placeholder='Enter Last Name' required='')
-      label(for='Email') Please enter your Email
-      input#Email(type='Email' name='Email' placeholder='Enter Email' required='')
-      label(for='password') Please enter your password
-      input#password(type='password' name='password' placeholder='Enter Password' required='')
-      label(for='healthlevel') Health level:
-      select#Healthlevel(name='Healthlevel' size='1' required='')
-        option(value='1') 1
-        option(value='2') 2
-        option(value='3') 3
-        option(value='4') 4
-        option(value='5') 5
-      input(type='submit' value='Sign Up')
-      .member
-        | Already a member?
-        a(href='/Sign_in')
-          | Login Here
-  br
-  br
+  body
+    .wrapper
+      h1 Sign Up
+      form.sign-in-form(action='/createNewCustomer' method='POST')
+        label(for='ID') Please enter your ID
+        input#ID(type='tel' name='ID' placeholder='Enter ID' required='')
+        label(for='FirstName') Please enter your First Name
+        input#FirstName(type='text' name='FirstName' placeholder='Enter First Name' required='')
+        label(for='LastName') Please enter your Last Name
+        input#LastName(type='text' name='LastName' placeholder='Enter Last Name' required='')
+        label(for='Email') Please enter your Email
+        input#Email(type='Email' name='Email' placeholder='Enter Email' required='')
+        label(for='password') Please enter your password
+        input#password(type='password' name='password' placeholder='Enter Password' required='')
+        label(for='healthlevel') Health level:
+        select#Healthlevel(name='Healthlevel' size='1' required='')
+          option(value='1') 1
+          option(value='2') 2
+          option(value='3') 3
+          option(value='4') 4
+          option(value='5') 5
+        input(type='submit' value='Sign Up')
+        .member
+          | Already a member?
+          a(href='/Sign_in')
+            | Login Here
+    br
+    br

@@ -2,7 +2,7 @@ extends layout
 
 block topContent
   meta(charset='UTF-8')
-  script(defer='' src='/JS/layout.js')
+  link(rel='stylesheet' href='/CSS/new_profile.css')
   .mainForm
     .user-profile
       label.user-icon
@@ -13,6 +13,10 @@ block topContent
         label #{variable2}
         br
         label #{variable3}
+        br
+        label #{variable4}
+        br
+        label #{variable5}
       br
       br
       br
@@ -20,9 +24,10 @@ block topContent
         i.fa-solid.fa-medal
       .lesson-list
         h4 Your Upcoming Lessons
-        ul.lessons
+        br
+        label #{variable5}
       .button-container
-        button.button(data-url='/Review') Review Class
-        button.button(data-url='/Contact') Update Profile
-        button.button(data-url='/Contact') Cancel Membership
+        button.button(href='/Review') Review Class
+        button.button(href='/Contact') Update Profile
+        button.button(href='/Contact') Cancel Membership
 block content
