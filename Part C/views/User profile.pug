@@ -4,8 +4,7 @@ extends layout
 block topContent
   meta(charset='UTF-8')
   link(rel='stylesheet' href='/CSS/new_profile.css')
-
-
+  script(defer='' src='/JS/user profile.js')
   .mainForm
     .user-profile
       label.user-icon
@@ -26,9 +25,8 @@ block topContent
               td #{training.day}
               td #{training.coacherName}
               td #{training.trainingName}
-
       .button-container
-        button.button(href='/Review') Review Class
-        button.button(href='/Contact') Update Profile
-        button.button(href='/Contact') Cancel Membership
+        button.button(id='review-button') Review Class
+        button.button(id='update-profile-button') Update Profile
+        button.button(id='cancel-membership-button') Cancel Membership
 block content
