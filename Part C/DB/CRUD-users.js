@@ -170,7 +170,6 @@ const MyProfile=(req,res)=> {
                     console.log(trainings);
                     res.render('User profile', {
                         variable1: 'Hi ' + mysqlres[0].firstname + ' Welcome back',
-                        variable2: 'Name: ' + mysqlres[0].firstname + ' ' + mysqlres[0].lastname,
                         variable3: 'Health Level: ' + mysqlres[0].Health,
                         variable4: 'Your upcoming lessons:',
                         variable5: trainings
