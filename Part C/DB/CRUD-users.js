@@ -180,53 +180,6 @@ const MyProfile=(req,res)=> {
             }
 };
 
-//
-// const MyProfile=(req,res)=> {
-//     //validate that body is not empty
-//     if (!req.body) {
-//         res.status(400).send({message: "content can not be empty"});
-//         return;
-//     }
-//     else {
-//         mysql.query("SELECT  *  FROM users where id = ?", user.id, (err, mysqlres1) => {
-//             if (err) {
-//                 console.log("error in getting all user " + err);
-//                 res.status(400).send({message: "error in getting all user " + err})
-//                 return;
-//             }
-//             else {
-//                 mysql.query("SELECT  *  FROM table_of_training where user_id = ?", user.id, (err, mysqlres) => {
-//                     console.log(mysqlres);
-//                     console.log(mysql.query);
-//                     console.log(mysqlres[0]);
-//                     if (err) {
-//                         console.log("error in getting all user " + err);
-//                         res.status(400).send({message: "error in getting all user " + err})
-//                         return;
-//                     }
-//                     console.log(mysqlres[0]);
-//                     const trainings = mysqlres.map(training => {
-//                         return {
-//                             "time": training.time_training,
-//                             "day": training.day_training,
-//                             "coacherName": training.Coacher_name,
-//                             "trainingName": training.training
-//                         };
-//                     });
-//                     console.log(trainings);
-//                     res.render('User profile', {
-//                         variable1: 'Hi ' + mysqlres1[0].firstname + ' Welcome back',
-//                         variable2: 'Name: ' + mysqlres1[0].firstname + ' ' + mysqlres1[0].lastname,
-//                         variable3: 'Health Level: ' + mysqlres1[0].Health,
-//                         variable4: 'Your upcoming lessons:',
-//                         variable5: trainings
-//                     });
-//                     return;
-//                 });
-//                 return;
-//             }
-//         });
-//     }
-// };
+
 
 module.exports= {createNewUser,FindUser,MyProfile};

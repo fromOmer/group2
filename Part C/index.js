@@ -29,14 +29,11 @@ app.use(express.static(path.join(__dirname, "static"))); // find the folder stat
 
 
 //routing
+
 app.get('/', (req, res) => {
    res.render('Home-page');
 });
 
-
-//app.get('/Coach', (req, res) => {
-//   res.render('Coach');
-//});
 
 app.get('/Sign_in', (req, res) => {
    res.render('SignIn');
@@ -47,7 +44,11 @@ app.get('/Sign_up', (req, res) => {
 });
 
 app.get('/classes', (req, res) => {
-   res.render('Training');
+    const Q1 = 'select * from Trainings';
+    mysql.query(Q1, (err, mysqlres)=>{
+        if (err) throw err;
+        res.render('Training', {V1 : mysqlres})
+    })
 });
 
 app.get('/Registaration', (req, res) => {
@@ -59,24 +60,33 @@ app.get('/Contact', (req, res) => {
 });
 
 app.get('/Table-classes', (req, res) => {
-   res.render('Table of classes');
+  const Q1 = 'SELECT time_training, day_training, GROUP_CONCAT(CONCAT(day_training, \' - \',Coacher_name, \' - \', training) SEPARATOR \'\\n\') AS details FROM table_of_training_no_user GROUP BY day_training,time_training ';
+  mysql.query(Q1, (err ,mysqlres) => {
+    if (err) throw err;
+    const scheduleData = mysqlres.map(row => {
+      return {
+        time_training: row.time_training,
+        day_training:row.day_training,
+        details: row.details ? row.details.split('\n') : []
+      };
+    });
+    console.log(scheduleData[0].details);
+    res.render('Table of classes.pug', { Data: scheduleData });
+  });
 });
 
-// app.get('/my-profile', (req, res) => {
-//    res.render('User profile');
-//  });
 
 app.get('/Review', (req, res) => {
    res.render('Review');
 });
 
 
-
-// Define the path to your CSV file
-const csvFilePath = './DB/coachers.csv';
-
 app.get('/Coach', (req, res) => {
-      res.render('Coach');
+   const Q1 = 'select * from Coachers';
+    mysql.query(Q1, (err, mysqlres)=>{
+        if (err) throw err;
+        res.render('Coach', {V1 : mysqlres})
+    })
 });
 
 
@@ -87,7 +97,6 @@ app.get ('/create_Trainings',CreateDB.create_Trainings );
 app.get ('/CreateTable_users',CreateDB.CreateTable_users );
 app.get ('/create_coachers',CreateDB.create_coachers );
 app.get('/Create_table_training',CreateDB.create_table_training);
-app.get('/Insert_table_training',CreateDB.InsertData_table_training);
 app.get ('/InsertData_Trainings',CreateDB.InsertData_Trainings );
 app.get ('/InsertData_coachers',CreateDB.InsertData_coachers );
 app.get ('/InsertData_users',CreateDB.InsertData_users );
@@ -96,8 +105,11 @@ app.get ('/Show_Coachers',CreateDB.Show_Coachers );
 app.get ('/Show_users',CreateDB.Show_users );
 app.get ('/Drop_table_trining',CreateDB.Drop_table_training );
 app.get ('/Show_table',CreateDB.Show_table );
-
-
+app.get ('/drop_coachers',CreateDB.drop_coachers );
+app.get ('/createtablenouser',CreateDB.create_table_training_no_user );
+app.get ('/inserttablenouser',CreateDB.InsertData_table_training_no_user );
+app.get ('/Show_table_trainigs_no',CreateDB.Show_table_trainigs_no );
+app.get ('/drop_trainng',CreateDB.drop_trainng );
 
 
 //adding new users , review , contact us ..

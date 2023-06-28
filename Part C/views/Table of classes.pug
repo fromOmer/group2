@@ -1,4 +1,5 @@
 extends layout
+
 block topContent
   head
     meta(charset='UTF-8')
@@ -6,360 +7,33 @@ block topContent
     script(defer='' src='/JS/contact.js')
     script(defer='' src='/JS/training-schedule.js')
     title Table of Classes
+
   .content_table
     h1 Weekly Training Schedule
     p The table you see here displays the training schedule for the current week.
-    p
-      | It&apos;s important to keep in mind that the trainings and times will vary every week.
+    p It's important to keep in mind that the trainings and times will vary every week.
     br
-    p
-      | To participate, please make sure to register for the training by filling out the registration form.
+    p To participate, please make sure to register for the training by filling out the registration form.
     p
       | Click here:
       button#registrate.button(data-url='/Registaration') Register to class
-    p Note: You can not register to class if you are not sign in,please Sign in.
+    p Note: You cannot register for a class if you are not signed in. Please sign in.
     table#schedule-table
       thead
         tr
-          th
-            h3 Time
-          th
-            h3 Sunday
-          th
-            h3 Monday
-          th
-            h3 Tuesday
-          th
-            h3 Wednesday
-          th
-            h3 Thursday
-          th
-            h3 Friday
-          th
-            h3 Saturday
+          th Time Training
+          each day in Data
+            th= day.day_training
       tbody
-        tr
-          td
-            h3 09:00 AM
-          td
-            | Functional Training
-            br
-            | Meitar Gershoni
-            br
-          td
-            | Pilates Training
-            br
-            | Katya Kalinoviz
-            br
-          td
-            | Zumba Training
-            br
-            | Yafit halewer
-            br
-          td
-            | Yoga Training
-            br
-            | Katya Kalinoviz
-            br
-          td
-            | Functional Training
-            br
-            |  Meitar Gershoni
-            br
-          td
-            | TRX Training
-            br
-            | Yoni cohen
-            br
-          td
-            br
-            br
-        tr
-          td
-            h3 10:00 AM
-          td
-            | Functional Training
-            br
-            |  Meitar Gershoni
-            br
-          td
-            | TRX Training
-            br
-            | Yoni cohen
-            br
-          td
-            | Strength Training
-            br
-            | Amitay Gelre
-            br
-          td
-            | Pilates Training
-            br
-            | Katya Kalinoviz
-            br
-          td
-            | Zumba Training
-            br
-            | Yafit halewer
-            br
-          td
-            | Yoga Training
-            br
-            | Katya Kalinoviz
-            br
-          td
-            br
-            br
-        tr
-          td
-            h3 11:00 AM
-          td
-            | Pilates Training
-            br
-            | Katya Kalinoviz
-            br
-          td
-            | Pilates Training
-            br
-            | Katya Kalinoviz
-            br
-          td
-            | Zumba Training
-            br
-            | Yafit halewer
-            br
-          td
-            | Yoga Training
-            br
-            | Katya Kalinoviz
-            br
-          td
-            | Pilates Training
-            br
-            | Katya Kalinoviz
-            br
-          td
-            | Functional Training
-            br
-            |  Meitar Gershoni
-            br
-          td
-            br
-            br
-        tr
-          td
-            h3 12:00 AM
-          td
-            | TRX Training
-            br
-            | Yoni cohen
-            br
-          td
-            | Strength Training
-            br
-            | Amitay Gelre
-            br
-          td
-            | Pilates Training
-            br
-            | Katya Kalinoviz
-            br
-          td
-            | Pilates Training
-            br
-            | Katya Kalinoviz
-            br
-          td
-            | Pilates Training
-            br
-            | Katya Kalinoviz
-            br
-          td
-            | Functional Training
-            br
-            |  Meitar Gershoni
-            br
-          td
-            br
-            br
-        tr
-          td
-            h3 17:00 PM
-          td
-            | Strength Training
-            br
-            | Amitay Gelre
-            br
-          td
-            | Pilates Training
-            br
-            | Katya Kalinoviz
-            br
-          td
-            | Yoga Training
-            br
-            | Katya Kalinoviz
-            br
-          td
-            | Pilates Training
-            br
-            | Katya Kalinoviz
-            br
-          td
-            | Functional Training
-            br
-            |  Meitar Gershoni
-            br
-          td
-            br
-            br
-          td
-            | Strength Training
-            br
-            | Amitay Gelre
-            br
-        tr
-          td
-            h3 18:00 PM
-          td
-            | TRX Training
-            br
-            | Yoni cohen
-            br
-          td
-            | Strength Training
-            br
-            | Amitay Gelre
-            br
-          td
-            | Pilates Training
-            br
-            | Katya Kalinoviz
-            br
-          td
-            | Pilates Training
-            br
-            | Katya Kalinoviz
-            br
-          td
-            | Pilates Training
-            br
-            | Katya Kalinoviz
-            br
-          td
-            br
-            br
-          td
-            | TRX Training
-            br
-            | Yoni cohen
-            br
-        tr
-          td
-            h3 19:00 PM
-          td
-            | Functional Training
-            br
-            |  Meitar Gershoni
-            br
-          td
-            | Strength Training
-            br
-            | Yoni cohen
-            br
-          td
-            | Strength Training
-            br
-            | Amitay Gelre
-            br
-          td
-            | Pilates Training
-            br
-            | Katya Kalinoviz
-            br
-          td
-            | Zumba Training
-            br
-            | Yafit halewer
-            br
-          td
-            br
-            br
-          td
-            | Pilates Training
-            br
-            | Katya Kalinoviz
-            br
-        tr
-          td
-            h3 20:00 PM
-          td
-            | Pilates Training
-            br
-            | Katya Kalinoviz
-            br
-          td
-            | Pilates Training
-            br
-            | Katya Kalinoviz
-            br
-          td
-            | Zumba Training
-            br
-            | Yafit halewer
-            br
-          td
-            | Yoga Training
-            br
-            | Katya Kalinoviz
-            br
-          td
-            | Pilates Training
-            br
-            | Katya Kalinoviz
-            br
-          td
-            br
-            br
-          td
-            | Strength Training
-            br
-            | Yoni cohen
-            br
-        tr
-          td
-            h3 21:00 PM
-          td
-            | Strength Training
-            br
-            | Yoni cohen
-            br
-          td
-            | Strength Training
-            br
-            | Amitay Gelre
-            br
-          td
-            | Pilates Training
-            br
-            | Katya Kalinoviz
-            br
-          td
-            | Pilates Training
-            br
-            | Katya Kalinoviz
-            br
-          td
-            | Pilates Training
-            br
-            | Katya Kalinoviz
-            br
-          td
-            br
-            br
-          td
-            | TRX Training
-            br
-            | Yoni cohen
-            br
+        each hourRow in Data
+          tr
+            td= hourRow.time_training
+            each day in Data
+              - const detail = day.details.find(detail =>day.day_training==detail.training.split(' - ')[0])
+              td
+                if detail
+                  p= detail.training.split(' - ')[2]
+                  p= detail.training.split(' - ')[1]
+                else
+                  p No training scheduled
 block content

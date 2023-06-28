@@ -19,19 +19,21 @@
     text-align: left;
 }
 
-.Coachh img {
-  object-fit: contain;
-  margin: 0 auto;
-  max-width: 20%;
-  text-align: center;
-  height: 300px;
-  padding: 20px;
-}
-@media screen and (max-width: 1000px) {
-  Coachh img {
-    display: none;
-  }
-}
+/*.img {*/
+/*  object-fit: contain;*/
+/*  margin: 0 auto;*/
+/*  max-width: 10px;*/
+/*  text-align: center;*/
+/*  height: 300px;*/
+/*  padding: 20px;*/
+/*    border-radius: 10px;*/
+
+/*}*/
+/*@media screen and (max-width: 100px) {*/
+/*    img {*/
+/*    display: none;*/
+/*  }*/
+/*}*/
 
 h2{
     justify-content: center;
@@ -138,3 +140,35 @@ section p{
 p{
     text-align: center;
 }
+/* coach.css */
+
+#Coach-container table {
+  border-collapse: separate;
+  border-spacing: 20px; /* Adjust this value to increase/decrease the space */
+}
+
+#Coach-container th,
+#Coach-container td {
+  padding: 20px; /* Adjust this value for inner cell spacing */
+  font-weight: bold; /* Make the values in the first column bold */
+
+}
+
+#Coach-container th:first-child,
+#Coach-container td:first-child {
+  font-weight: bolder; /* Make the values in the first column bold */
+  font-size: 2em;
+}
+
+#Coach-container td img {
+  max-width: 300px; /* Adjust the maximum width of the coach photo */
+  height: 250px; /* Maintain aspect ratio of the photo */
+  object-fit: cover; /* Use 'cover' to fill the container and maintain aspect ratio */
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  border-radius: 50%; /* Set border-radius to 50% to create a circular shape */
+
+}
+
+

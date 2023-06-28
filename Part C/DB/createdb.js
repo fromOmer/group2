@@ -46,7 +46,7 @@ const InsertData_users = (req,res)=>{
 
 ///create and insert coachers
 const create_coachers = (req,res)=> {
- var Q_coachers = "CREATE TABLE IF NOT EXISTS Coachers ( id int(11) NOT NULL PRIMARY KEY ,name varchar(255) NOT NULL ,description LONGTEXT  NOT NULL)";
+ var Q_coachers = "CREATE TABLE IF NOT EXISTS Coachers ( id int(11) NOT NULL PRIMARY KEY ,name varchar(255) NOT NULL ,description LONGTEXT  NOT NULL,photo varchar(255) NOT NULL  )";
     SQL.query(Q_coachers,(err,mySQLres)=>{
         if (err) {
             console.log("error ", err);
@@ -59,6 +59,33 @@ const create_coachers = (req,res)=> {
     })
 }
 
+const drop_trainng = (req,res)=> {
+ const Q_coacherss = "drop table Trainings";
+    SQL.query(Q_coacherss,(err,mySQLres)=>{
+        if (err) {
+            console.log("error ", err);
+            res.status(400).send({message: "error in droped table Trainings "});
+            return;
+        }
+        console.log('droped table Trainings ');
+        res.send("table droped Trainings ");
+        return;
+    })
+}
+
+const drop_coachers = (req,res)=> {
+ const Q_coacherss = "drop table Coachers";
+    SQL.query(Q_coacherss,(err,mySQLres)=>{
+        if (err) {
+            console.log("error ", err);
+            res.status(400).send({message: "error in droped table coachers "});
+            return;
+        }
+        console.log('droped table coachers ');
+        res.send("table droped coachers ");
+        return;
+    })
+}
 const InsertData_coachers = (req,res)=>{
     var Q2 = "INSERT INTO Coachers SET ?";
     const csvFilePath= path.join(__dirname, "coachers.csv");
@@ -70,7 +97,8 @@ const InsertData_coachers = (req,res)=>{
         var NewEntry = {
             "ID": element.id,
             "name": element.name,
-            "description": element.description
+            "description": element.description,
+            "photo":element.photo
         }
 
         SQL.query(Q2, NewEntry, (err,mysqlres)=>{
@@ -86,7 +114,7 @@ const InsertData_coachers = (req,res)=>{
 
 ///create and insert trainings
 const create_Trainings = (req,res)=> {
- var Q_Trainings = "CREATE TABLE IF NOT EXISTS Trainings ( id int(11) NOT NULL PRIMARY KEY auto_increment , name varchar(255) NOT NULL , description LONGTEXT  NOT NULL)";
+ var Q_Trainings = "CREATE TABLE IF NOT EXISTS Trainings ( id int(11) NOT NULL PRIMARY KEY auto_increment , name varchar(255) NOT NULL , description LONGTEXT  NOT NULL,photo varchar(255) NOT NULL)";
     SQL.query(Q_Trainings,(err,mySQLres)=>{
         if (err) {
             console.log("error ", err);
@@ -109,7 +137,8 @@ const InsertData_Trainings = (req,res)=>{
     jsonObj.forEach(element => {
         var NewEntry = {
             "name": element.name,
-            "description": element.description
+            "description": element.description,
+            "photo":element.photo
         }
 
         SQL.query(Q2, NewEntry, (err,mysqlres)=>{
@@ -137,6 +166,58 @@ var q_table = "CREATE TABLE IF NOT EXISTS table_of_training (id int(11) NOT NULL
     });
 };
 
+const create_table_training_no_user = (req,res)=> {
+var q_table = "CREATE TABLE IF NOT EXISTS table_of_training_no_user (id int(11) NOT NULL PRIMARY KEY auto_increment , time_training TIME NOT NULL,day_training VARCHAR(255) NOT NULL,Coacher_name VARCHAR(255) NOT NULL,training VARCHAR(255) NOT NULL )";
+    SQL.query(q_table,(err,mySQLres)=>{
+    if (err) {
+            console.log("error ", err);
+            res.status(400).send({message: "error in creating table of training "});
+            return;
+        }
+        console.log('created table table of training page trinings');
+        res.send("table created table of training page trinings");
+        return;
+    });
+};
+
+const InsertData_table_training_no_user = (req, res) => {
+  const Q2 = "INSERT INTO table_of_training_no_user SET ?";
+  const csvFilePath = path.join(__dirname, "table_no_user_trainigs.csv");
+
+  csv()
+    .fromFile(csvFilePath)
+    .then((jsonObj) => {
+      const insertPromises = jsonObj.map((element) => {
+        const NewEntry = {
+          time_training: element.time_training,
+          day_training: element.day_training,
+          Coacher_name: element.Coacher_name,
+          training: element.training
+        };
+        return new Promise((resolve, reject) => {
+          SQL.query(Q2, NewEntry, (err, mysqlres) => {
+            if (err) {
+              console.log("error in inserting data into table training", err);
+              reject(err);
+            } else {
+              resolve();
+            }
+          });
+        });
+      });
+      Promise.all(insertPromises)
+        .then(() => {
+          res.send("Data inserted successfully");
+        })
+        .catch((err) => {
+          res.status(500).send("Error inserting data");
+        });
+    })
+    .catch((err) => {
+      console.log("Error reading CSV file", err);
+      res.status(500).send("Error reading CSV file");
+    });
+};
 const Drop_table_training =(req,res)=> {
 var q_table = "DROP TABLE IF EXISTS table_of_training";
     SQL.query(q_table,(err,mySQLres)=>{
@@ -150,6 +231,8 @@ var q_table = "DROP TABLE IF EXISTS table_of_training";
         return;
     });
 };
+
+
 const InsertData_table_training = (req, res) => {
   const Q2 = "INSERT INTO table_of_training SET ?";
   const csvFilePath = path.join(__dirname, "Table_of_training.csv");
@@ -191,7 +274,18 @@ const InsertData_table_training = (req, res) => {
       res.status(500).send("Error reading CSV file");
     });
 };
-
+const Show_table_trainigs_no = (req,res)=>{
+    var Q3 = "SELECT  *  FROM table_of_training ";
+    SQL.query(Q3, (err, mySQLres)=>{
+        if (err) {
+            console.log("error in showing table_of_training ", err);
+            res.send("error in showing table_of_training ");
+            return;
+        }
+        console.log("showing table_of_training");
+        res.send(mySQLres);
+        return;
+    })};
 
 
 //show coachers
@@ -260,4 +354,4 @@ const DROP_users = (req,res)=>{
         res.send(mySQLres);
         return;
     })};
-module.exports = {Show_table,Drop_table_training,InsertData_table_training,create_table_training,Show_Coachers,InsertData_Trainings,create_Trainings,InsertData_coachers,create_coachers,InsertData_users,CreateTable_users,Show_Training,Show_users,DROP_users};
+module.exports = {drop_trainng,Show_table_trainigs_no,InsertData_table_training_no_user,create_table_training_no_user,drop_coachers,Show_table,Drop_table_training,InsertData_table_training,create_table_training,Show_Coachers,InsertData_Trainings,create_Trainings,InsertData_coachers,create_coachers,InsertData_users,CreateTable_users,Show_Training,Show_users,DROP_users};

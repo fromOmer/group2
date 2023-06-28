@@ -1,69 +1,21 @@
-doctype html
-head
-  meta(charset='UTF-8')
-  script(defer='' src='/JS/Sign%20in.js')
-  link(rel='stylesheet' href='/CSS/Training.css')
-  link(rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons')
-  script(src='https://kit.fontawesome.com/b39bb7fe27.js')
-  link(rel='icon' type='image/png' href='/pics/site_icon_small.png')
-  script(defer='' src='/JS/training.js')
-  script(defer='' src='/JS/Welcome-title.js')
-  title Classes
-.topBar
-nav
-  input#check(type='checkbox')
-  label.checkbtn(for='check')
-    i.fas.fa-bars
-  img.navBarLogo(src='/pics/flow%20big.png' alt='Navigation Bar Logo')
-  ul
-    li
-      a(href='/') Home
-    li
-      a(href='/Coach') FLOW coaches
-    li
-      a(href='/classes') FLOW classes
-    li
-      a(href='/Table-classes') FLOW week schedule
-    li
-      a(href='/Contact') Contact us
-    li#greeting-button
-      a(href='/my-profile') My Profile
-    li#sign-in-button
-      a(href='/Sign_in') Sign In/Sign Up
-br
-h5 Our classes
-#users-container
-footer
-  .bottomBar
-    .row
-      .column
-        h4 Find us at:
-        p
-          | 1 Tse&apos;elim Street
-          br
-          |                             Meitar
-          br
-          |                             Israel
-        p
-      .column
-        .map
-          h4  Navigate now:
-          a.nav-link(href='https://goo.gl/maps/xVGp2tQbnvNwgWsX6' target='_blank')
-            img(src='/pics/map.png' width='180' height='70')
-      .column
-        h4  Contact us:
-        p
-          | Shahar: 0526555351
-          br
-          | Omer: 0545620696
-          br
-        .contact-logos
-          a(href='mailto:flowtraining@gmail.com' target='_blank')
-            label
-              i.fas.fa-envelope
-          a(href='https://www.facebook.com/Flow.personal.training.studio/' target='_blank')
-            label
-              i.fa-brands.fa-facebook
-          a(href='https://www.instagram.com/flow_personal_training_studio/' target='_blank')
-            label
-              i.fa-brands.fa-instagram
+extends layout
+
+block topContent
+  head
+    meta(charset='UTF-8')
+    title Coaches
+    link(rel='stylesheet' href='/CSS/Training.css')
+    script(defer='' src='/JS/training.js')
+    h5 Our Trainings
+    #Training-container
+      table
+        tr
+        each n in V1
+          tr
+            td
+              | #{n.name}
+            td
+              | #{n.description}
+            td
+              img(src='/pics/' + n.photo, alt='Coach Photo')
+block content

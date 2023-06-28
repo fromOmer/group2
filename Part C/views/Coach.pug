@@ -8,4 +8,14 @@ block topContent
     script(defer='' src='/JS/coachers.js')
     h5 Our Coaches
     #Coach-container
+      table
+        tr
+        each n in V1
+          tr
+            td
+              | #{n.name}
+            td
+              | #{n.description}
+            td
+              img(src='/pics/' +n.photo, alt='Coach Photo')
 block content
