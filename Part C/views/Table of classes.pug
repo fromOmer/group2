@@ -29,7 +29,6 @@ block topContent
           tr
             td= hourRow.time_training
             each day in Data
-              - const detail = day.details.find(detail =>day.day_training==detail.training.split(' - ')[0])
               td
                 if detail
                   p= detail.training.split(' - ')[2]

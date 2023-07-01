@@ -8,20 +8,12 @@ const firstNameInput = document.querySelector('#FirstName');
 const lastNameInput = document.querySelector('#LastName');
 const emailInput = document.querySelector('#Email');
 const idInput = document.querySelector('#ID');
-
+//const healthinput = document.getElementById('Healthlevel');
+const healthinput = document.querySelector('#Healthlevel');
 // Define regular expressions for validation
 var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/;
 var nameRegex = /^[a-zA-Z]+$/;
 var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-// Define error messages
-var id_error = document.getElementById('id_error');
-var email_error = document.getElementById('email_error');
-var pass_error = document.getElementById('pass_error');
-var fName_error = document.getElementById('fName_error');
-var lName_error = document.getElementById('lName_error');
-
-
 
 
 // Add event listeners for form submission
@@ -29,16 +21,54 @@ form.addEventListener('submit', function(event) {
   // Prevent the form from submitting if validation fails
   event.preventDefault();
 
-  if (validateID() && validateFirstName() && validateLastName() && validateEmail() && validatePassword()) {
-    setTimeout(function () {
-      alert("You are now registered and redirected to sign in page");
-    //  window.location.href = "/";
+  const password = passwordInput.value.trim();
+  const firstname = firstNameInput.value.trim();
+  const lastname = lastNameInput.value.trim();
+  const email = emailInput.value.trim();
+  const id = idInput.value.trim();
+const health  = healthinput.options[healthinput.selectedIndex].value;
 
-    }, 500);
-  }
-  else{
-  }
+
+  if (!validateID() || !validateFirstName() || !validateLastName() || !validateEmail() || !validatePassword()) {
+    return;
+    }
+   // Form a user data object
+  const userData = {
+    ID: id,
+    Email: email,
+    password: password,
+    FirstName: firstname,
+    LastName: lastname,
+    Health: health
+  };
+
+  // Send data to server
+  fetch("/createNewCustomer", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userData),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+ //     console.log("Response received from /Sign_up");
+      console.log(data);
+
+
+      window.location.href = "/Sign_in";
+      passwordInput.value = "";
+      firstNameInput.value = "";
+      lastNameInput.value = "";
+      emailInput.value = "";
+      idInput.value = "";
+      healthinput.value = "";
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
 });
+
 
 // Validate password input
 function validatePassword() {
@@ -89,8 +119,8 @@ function validateID() {
   const regexID = /\b\d{8}\b/;
   if (!regexID.test(id)) {
         alert('Please enter a valid ID');
-
     return false;
   }
   return true;
 }
+

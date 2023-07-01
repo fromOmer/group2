@@ -55,6 +55,7 @@ app.get('/Registaration', (req, res) => {
    res.render('Registration for classes');
 });
 
+
 app.get('/Contact', (req, res) => {
    res.render('Contact-us');
 });
@@ -110,6 +111,9 @@ app.get ('/createtablenouser',CreateDB.create_table_training_no_user );
 app.get ('/inserttablenouser',CreateDB.InsertData_table_training_no_user );
 app.get ('/Show_table_trainigs_no',CreateDB.Show_table_trainigs_no );
 app.get ('/drop_trainng',CreateDB.drop_trainng );
+app.get ('/InsertData_table_training',CreateDB.InsertData_table_training );
+
+
 
 
 //adding new users , review , contact us ..
