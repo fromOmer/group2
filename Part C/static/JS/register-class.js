@@ -66,7 +66,7 @@ function handleSubmit(event) {
 
 // Make an AJAX request to the server to fetch the trainings
 var xhr = new XMLHttpRequest();
-xhr.open("GET", "/registerTraining", true);
+xhr.open("GET", "/getTrainings", true);
 xhr.onreadystatechange = function () {
   if (xhr.readyState === 4 && xhr.status === 200) {
     var response = JSON.parse(xhr.responseText);

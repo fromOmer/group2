@@ -93,7 +93,7 @@ app.get('/Coach', (req, res) => {
 
 
 
-// Creating the DB
+// Creating the DB - NEEDED TO INSERT TO URL LINK
 app.get ('/DROP_users',CreateDB.DROP_users );
 app.get ('/create_Trainings',CreateDB.create_Trainings );
 app.get ('/CreateTable_users',CreateDB.CreateTable_users );
@@ -124,6 +124,7 @@ app.post("/createNewCustomer", CRUD_TRY.createNewUser);
 app.post("/CheckUser", CRUD_TRY.FindUser);
 app.get('/my-profile', CRUD_TRY.MyProfile);
 app.post ('/registerTraining', CRUD_TRY.registerTraining);
+app.get('/getTrainings',CRUD_TRY.getTrainings);
 app.get('/mytrainings_review',CRUD_TRY.mytrainings_review);
 app.post('/review_training',CRUD_TRY.review_training);
 
