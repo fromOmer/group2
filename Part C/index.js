@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
    res.render('Home-page');
 });
 
-
+app.get
 app.get('/Sign_in', (req, res) => {
    res.render('SignIn');
 });
@@ -52,6 +52,7 @@ app.get('/classes', (req, res) => {
 });
 
 app.get('/Registaration', (req, res) => {
+    const q1='select * from '
    res.render('Registration for classes');
 });
 
@@ -97,7 +98,7 @@ app.get ('/DROP_users',CreateDB.DROP_users );
 app.get ('/create_Trainings',CreateDB.create_Trainings );
 app.get ('/CreateTable_users',CreateDB.CreateTable_users );
 app.get ('/create_coachers',CreateDB.create_coachers );
-app.get('/Create_table_training',CreateDB.create_table_training);
+app.get('/create_table_training',CreateDB.create_table_training);
 app.get ('/InsertData_Trainings',CreateDB.InsertData_Trainings );
 app.get ('/InsertData_coachers',CreateDB.InsertData_coachers );
 app.get ('/InsertData_users',CreateDB.InsertData_users );
@@ -122,7 +123,9 @@ app.get ('/InsertData_table_training',CreateDB.InsertData_table_training );
 app.post("/createNewCustomer", CRUD_TRY.createNewUser);
 app.post("/CheckUser", CRUD_TRY.FindUser);
 app.get('/my-profile', CRUD_TRY.MyProfile);
-
+app.post ('/registerTraining', CRUD_TRY.registerTraining);
+app.get('/mytrainings_review',CRUD_TRY.mytrainings_review);
+app.post('/review_training',CRUD_TRY.review_training);
 
 
 

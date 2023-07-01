@@ -56,7 +56,10 @@ const health  = healthinput.options[healthinput.selectedIndex].value;
       console.log(data);
 
 
-      window.location.href = "/Sign_in";
+      alert(
+        "Your account has been created "
+      );
+      window.location.href = "/";
       passwordInput.value = "";
       firstNameInput.value = "";
       lastNameInput.value = "";

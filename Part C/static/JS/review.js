@@ -1,7 +1,7 @@
 
 // Function to populate the select element with available trainings
 function populateSelect(trainings) {
-  var selectElement = document.getElementById("training-select");
+  var selectElement = document.getElementById("training-selected");
 
   // Clear the select element
   selectElement.innerHTML = "";
@@ -20,12 +20,14 @@ function handleSubmit(event) {
   event.preventDefault();
 
   // Get the selected training value
-  var selectElement = document.getElementById("training-select");
+  var selectElement = document.getElementById("training-selected");
   var selectedTraining = selectElement.value;
+const score_select = document.querySelector('#score');
+const scoree  = score_select.options[score_select.selectedIndex].value;
 
   // Make an AJAX request to the server to register the training
   var xhr = new XMLHttpRequest();
-  xhr.open("POST", "/registerTraining", true);
+  xhr.open("POST", "/review_training", true);
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
@@ -45,14 +47,15 @@ function handleSubmit(event) {
     time_training: time_training,
     day_training: day_training,
     Coacher_name: Coacher_name,
-    training: training_name
+    training: training_name,
+    score: scoree
   };
   xhr.send(JSON.stringify(data))
   .then((res) => res.json())
     .then((data) => {
  //     console.log("Response received from /my-profile");
     console.log(data);
-    alert ("the user successfully register , please see all your trainings this week");
+    alert ("the user successfully wrote a review ");
       window.location.href = "my-profile";
       time_training.value = "";
       day_training.value = "";
@@ -66,7 +69,7 @@ function handleSubmit(event) {
 
 // Make an AJAX request to the server to fetch the trainings
 var xhr = new XMLHttpRequest();
-xhr.open("GET", "/registerTraining", true);
+xhr.open("GET", "/mytrainings_review", true);
 xhr.onreadystatechange = function () {
   if (xhr.readyState === 4 && xhr.status === 200) {
     var response = JSON.parse(xhr.responseText);

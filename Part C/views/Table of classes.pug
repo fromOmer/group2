@@ -4,7 +4,6 @@ block topContent
   head
     meta(charset='UTF-8')
     link(rel='stylesheet' href='/CSS/Table%20of%20classes.css')
-    script(defer='' src='/JS/contact.js')
     script(defer='' src='/JS/training-schedule.js')
     title Table of Classes
 
@@ -14,25 +13,25 @@ block topContent
     p It's important to keep in mind that the trainings and times will vary every week.
     br
     p To participate, please make sure to register for the training by filling out the registration form.
+    p Note: You cannot register for a class if you are not signed in. Please sign in.
     p
       | Click here:
-      button#registrate.button(data-url='/Registaration') Register to class
-    p Note: You cannot register for a class if you are not signed in. Please sign in.
-    table#schedule-table
-      thead
-        tr
-          th Time Training
-          each day in Data
-            th= day.day_training
-      tbody
-        each hourRow in Data
-          tr
-            td= hourRow.time_training
-            each day in Data
-              td
-                if detail
-                  p= detail.training.split(' - ')[2]
-                  p= detail.training.split(' - ')[1]
-                else
-                  p No training scheduled
+      button#regi.button(data-url='/Registaration') Register to class
+    //table#schedule-table
+      //thead
+      //  tr
+      //    th Time Training
+      //    each day in Data
+      //      th= day.day_training
+      //tbody
+      //  each hourRow in Data
+      //    tr
+      //      td= hourRow.time_training
+      //      each day in Data
+      //        td
+      //          if detail
+      //            p= detail.training.split(' - ')[2]
+      //            p= detail.training.split(' - ')[1]
+      //          else
+      //            p No training scheduled
 block content
