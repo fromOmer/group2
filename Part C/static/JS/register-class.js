@@ -53,7 +53,7 @@ function handleSubmit(event) {
  //     console.log("Response received from /my-profile");
     console.log(data);
     alert ("the user successfully register , please see all your trainings this week");
-      window.location.href = "my-profile";
+      window.location.href = "/my-profile";
       time_training.value = "";
       day_training.value = "";
       Coacher_name.value = "";

@@ -56,7 +56,7 @@ const scoree  = score_select.options[score_select.selectedIndex].value;
  //     console.log("Response received from /my-profile");
     console.log(data);
     alert ("the user successfully wrote a review ");
-      window.location.href = "my-profile";
+      window.location.href = "/my-profile";
       time_training.value = "";
       day_training.value = "";
       Coacher_name.value = "";
