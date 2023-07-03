@@ -182,9 +182,9 @@ const mytrainings_review=  (req,res)=> {
                         res.status(400).send({message: "error in getting all user " + err})
                         return;
                     } else {
-                       // console.log(mysqlres1);
-                         res.status(201).json({ trainings: mysqlres1 });
-                          //  return;
+                        console.log(mysqlres1);
+                         res.send({ trainings: mysqlres1 });
+                            return;
                             };
                 });
     };
@@ -207,10 +207,10 @@ const review_training = (req, res) => {
       res.status(400).send({ message: "error in updating registration: " + err });
       return;
     } else {
-      //  console.log(mysqlres);
+        console.log(mysqlres);
       console.log("registration inserted successfully");
-      res.status(201).json({ message: "Registration successful" });
-     // return;
+      res.send({ message: "Registration successful" });
+      return;
     }
   });
 };
@@ -222,8 +222,8 @@ const getTrainings = (req, res) => {
       res.status(400).send({ message: "error in getting all trainings: " + err });
       return;
     } else {
-      res.status(201).json({ trainings: mysqlres });
-      //return;
+      res.send({ trainings: mysqlres });
+      return;
     }
   });
 };
@@ -245,8 +245,8 @@ const registerTraining = (req, res) => {
       return;
     } else {
       console.log("registration inserted successfully");
-      res.status(201).json({ message: "Registration successful" });
-    //  return;
+      res.send({ message: "Registration successful" });
+      return;
     }
   });
 };

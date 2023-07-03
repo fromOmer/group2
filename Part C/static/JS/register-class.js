@@ -31,8 +31,6 @@ function handleSubmit(event) {
     if (xhr.readyState === 4 && xhr.status === 200) {
       var response = JSON.parse(xhr.responseText);
       console.log(response.message);
-      // Handle success response
-      // Handle success response
     }
   };
   const values = selectedTraining.split(" ");
