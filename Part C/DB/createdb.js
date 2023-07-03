@@ -86,6 +86,20 @@ const drop_coachers = (req,res)=> {
         return;
     })
 }
+
+const drop_tainign_no_user = (req,res)=> {
+ const Q_coacherss = "drop table table_of_training_no_user";
+    SQL.query(Q_coacherss,(err,mySQLres)=>{
+        if (err) {
+            console.log("error ", err);
+            res.status(400).send({message: "error in droped table coachers "});
+            return;
+        }
+        console.log('droped table coachers ');
+        res.send("table droped coachers ");
+        return;
+    })
+}
 const InsertData_coachers = (req,res)=>{
     var Q2 = "INSERT INTO Coachers SET ?";
     const csvFilePath= path.join(__dirname, "coachers.csv");
@@ -354,4 +368,4 @@ const DROP_users = (req,res)=>{
         res.send(mySQLres);
         return;
     })};
-module.exports = {drop_trainng,Show_table_trainigs_no,InsertData_table_training_no_user,create_table_training_no_user,drop_coachers,Show_table,Drop_table_training,InsertData_table_training,create_table_training,Show_Coachers,InsertData_Trainings,create_Trainings,InsertData_coachers,create_coachers,InsertData_users,CreateTable_users,Show_Training,Show_users,DROP_users};
+module.exports = {drop_tainign_no_user,drop_trainng,Show_table_trainigs_no,InsertData_table_training_no_user,create_table_training_no_user,drop_coachers,Show_table,Drop_table_training,InsertData_table_training,create_table_training,Show_Coachers,InsertData_Trainings,create_Trainings,InsertData_coachers,create_coachers,InsertData_users,CreateTable_users,Show_Training,Show_users,DROP_users};

@@ -167,27 +167,6 @@ const MyProfile=(req,res)=> {
     };
 };
 
-// const checkTrining = (req,res)=> {
-//         const newReview = {
-//         "time_training": req.body.time,
-//         "day_training": req.body.Day,
-//         "user_id":user.id ,
-//         "review":req.body.description ,
-//          "score":req.body.score
-//     };
-//     const Q2 = "select * from table_of_training where user_id is null group by day_training,time_training";
-//     mysql.query(Q2, (err, mysqlres2) => {
-//                 if (err) {
-//                     console.log("error in getting all the trinings " + err);
-//                     res.status(400).send({message: "error in getting all trinings " + err})
-//                     return;
-//                 } else {
-//                     console.log(mysqlres2);
-//                     res.redirect('/Registaration', {V1: mysqlres2});
-//                     return;
-//                 };
-//     });
-// };
 const mytrainings_review=  (req,res)=> {
     //validate that body is not empty
     if (!req.body) {

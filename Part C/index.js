@@ -113,7 +113,7 @@ app.get ('/inserttablenouser',CreateDB.InsertData_table_training_no_user );
 app.get ('/Show_table_trainigs_no',CreateDB.Show_table_trainigs_no );
 app.get ('/drop_trainng',CreateDB.drop_trainng );
 app.get ('/InsertData_table_training',CreateDB.InsertData_table_training );
-
+app.get('/drop_tainign_no_user',CreateDB.drop_tainign_no_user);
 
 
 
