@@ -1,30 +1,32 @@
 extends layout
 
 block topContent
+
   head
     meta(charset='UTF-8')
     script(defer='' src='/JS/register-class.js')
     link(rel='stylesheet' href='/CSS/Registration%20for%20classes.css')
     title Register
 
-  .content
-    .formbx
-      .container
-        form.form-container
-          h1 Classes Registration
-          p Attached all the optional classes for this week
-          .triple-picture
-            .bottomPicture
-              img(src='/pics/yoga-class.jpeg' alt='Picture 1')
-            .bottomPicture
-              img(src='/pics/trx-class.jpeg' alt='Picture 2')
-          br
-          form.form-container(action='mailto:flow.studio@gmail.com' method='post' enctype='application/json')
+  body
+    .content
+      .formbx
+        .container
+          form.form-container(action='/User profile' method='get' enctype='application/json' onsubmit='showAlert(e)')
+            h1 Classes Registration
+            p Attached all the optional classes for this week
+            .triple-picture
+              .bottomPicture
+                img(src='/pics/yoga-class.jpeg' alt='Picture 1')
+              .bottomPicture
+                img(src='/pics/trx-class.jpeg' alt='Picture 2')
+            br
             select#training-select(name='training')
               option(value='') Select a Training
             br
             .form-submit
               input#submit-btn(type='submit' value='Register')
+
 block content
   //script.
   //  checkCookie();

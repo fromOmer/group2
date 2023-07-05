@@ -17,17 +17,6 @@ h1{
     text-align: center;
 }
 
-h3{
-    justify-content: center;
-    text-align: center;
-    width:100% ;
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    margin-top: 15px;
-    display: inline-block;
-    letter-spacing: 1px;
-    font-weight: bold;
-}
 
 #schedule-table {
     margin: 20px;
@@ -47,6 +36,13 @@ h3{
 }
 
 .content_table p   {
+    padding-left: 30px;
+    margin-left: 30px;
+    font-weight: bolder;
+
+}
+.content_table h3   {
+    font-size: 1.5em;
     padding-left: 30px;
     margin-left: 30px;
     font-weight: bolder;
@@ -103,4 +99,32 @@ section p{
     margin: 10px;
     font-family: 'Geneva', sans-serif;
     color: snow;
+}
+
+
+
+
+
+
+
+.containertable {
+  margin: 20px auto;
+  width: 80%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th.border,
+td.border {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+th.border {
+  font-weight: bold;
+  font-size: 1.5em;
 }

@@ -9,29 +9,30 @@ block topContent
 
   .content_table
     h1 Weekly Training Schedule
-    p The table you see here displays the training schedule for the current week.
+    p Welcome! The table you see here displays the training schedule for the current week.
     p It's important to keep in mind that the trainings and times will vary every week.
     br
+    h3 Register
     p To participate, please make sure to register for the training by filling out the registration form.
-    p Note: You cannot register for a class if you are not signed in. Please sign in.
+    p Note: You cannot register for a class if you are not signed in.
     p
       | Click here:
       button#regi.button(data-url='/Registaration') Register to class
-    //table#schedule-table
-      //thead
-      //  tr
-      //    th Time Training
-      //    each day in Data
-      //      th= day.day_training
-      //tbody
-      //  each hourRow in Data
-      //    tr
-      //      td= hourRow.time_training
-      //      each day in Data
-      //        td
-      //          if detail
-      //            p= detail.training.split(' - ')[2]
-      //            p= detail.training.split(' - ')[1]
-      //          else
-      //            p No training scheduled
+    br
+
+    h3 Classes available this week
+    .containertable
+      table
+        thead
+          tr
+            th.border Day of the week
+            th.border Time
+            th.border Training details: Coach - Type
+          tbody
+            each n in Data
+                tr
+                    td.border=n.day_training
+                    td.border=n.time_training
+                    td.border=n.details
+
 block content

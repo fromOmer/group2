@@ -18,7 +18,7 @@ function populateSelect(trainings) {
 // Function to handle the form submission
 function handleSubmit(event) {
   event.preventDefault();
-
+    alert('The review submitted! thank you.'); // Show an alert to the client
   // Get the selected training value
   var selectElement = document.getElementById("training-selected");
   var selectedTraining = selectElement.value;

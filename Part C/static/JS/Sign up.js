@@ -126,4 +126,3 @@ function validateID() {
   }
   return true;
 }
-

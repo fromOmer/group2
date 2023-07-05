@@ -106,3 +106,7 @@ input{
     line-height: 60px;
     margin: 0px;
 }
+
+td {
+  padding: 10px;
+}

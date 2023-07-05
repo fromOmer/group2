@@ -5,7 +5,7 @@ const path = require('path');
 const BodyParser = require('body-parser');
 const cookieparse = require ('cookie-parser');
 const mysql = require('./DB/db');
-const port = 3030;
+const port = 3000;
 const CreateDB = require('./DB/createdb.js');
 const CRUD_TRY = require('./DB/CRUD-users.js');
 const fs = require('fs');
@@ -32,6 +32,11 @@ app.use(express.static(path.join(__dirname, "static"))); // find the folder stat
 
 app.get('/', (req, res) => {
    res.render('Home-page');
+});
+
+app.get('/contactSent', (req, res) => {
+
+    res.render('Home-page');
 });
 
 app.get
@@ -61,8 +66,19 @@ app.get('/Contact', (req, res) => {
    res.render('Contact-us');
 });
 
+app.get('/Disconnect', (req, res) => {
+    const UserID = req.cookies.UserID;
+      if (UserID) {
+        res.clearCookie('UserID');
+        console.log("HEY!!!!!!!!")
+        res.redirect('/');
+      } else {
+        res.send('Could not disconnect');
+      }
+});
+
 app.get('/Table-classes', (req, res) => {
-  const Q1 = 'SELECT time_training, day_training, GROUP_CONCAT(CONCAT(day_training, \' - \',Coacher_name, \' - \', training) SEPARATOR \'\\n\') AS details FROM table_of_training_no_user GROUP BY day_training,time_training ';
+  const Q1 = 'SELECT time_training, day_training, GROUP_CONCAT(CONCAT(Coacher_name, \' - \', training) SEPARATOR \'\\n\') AS details FROM table_of_training_no_user GROUP BY day_training,time_training ORDER BY FIELD(day_training, \'Sunday\', \'Monday\', \'Tuesday\', \'Wednesday\', \'Thursday\', \'Friday\', \'Saturday\'),time_training\n ';
   mysql.query(Q1, (err ,mysqlres) => {
     if (err) throw err;
     const scheduleData = mysqlres.map(row => {
@@ -93,28 +109,19 @@ app.get('/Coach', (req, res) => {
 
 
 
-// Creating the DB - NEEDED TO INSERT TO URL LINK
-app.get ('/DROP_users',CreateDB.DROP_users );
-app.get ('/create_Trainings',CreateDB.create_Trainings );
-app.get ('/CreateTable_users',CreateDB.CreateTable_users );
-app.get ('/create_coachers',CreateDB.create_coachers );
-app.get('/create_table_training',CreateDB.create_table_training);
-app.get ('/InsertData_Trainings',CreateDB.InsertData_Trainings );
-app.get ('/InsertData_coachers',CreateDB.InsertData_coachers );
-app.get ('/InsertData_users',CreateDB.InsertData_users );
+// Creating the database
+app.get('/init', (req, res) => {
+    res.render('Init');
+});
+
+app.get ('/createAll',CreateDB.create_AllTables);
+app.get ('/dropAll',CreateDB.drop_Alltables);
+app.get ('/insertAll',CreateDB.inset_Alldata );
 app.get ('/Show_Training',CreateDB.Show_Training );
 app.get ('/Show_Coachers',CreateDB.Show_Coachers );
 app.get ('/Show_users',CreateDB.Show_users );
-app.get ('/Drop_table_trining',CreateDB.Drop_table_training );
 app.get ('/Show_table',CreateDB.Show_table );
-app.get ('/drop_coachers',CreateDB.drop_coachers );
-app.get ('/createtablenouser',CreateDB.create_table_training_no_user );
-app.get ('/inserttablenouser',CreateDB.InsertData_table_training_no_user );
 app.get ('/Show_table_trainigs_no',CreateDB.Show_table_trainigs_no );
-app.get ('/drop_trainng',CreateDB.drop_trainng );
-app.get ('/InsertData_table_training',CreateDB.InsertData_table_training );
-app.get('/drop_tainign_no_user',CreateDB.drop_tainign_no_user);
-
 
 
 //adding new users , review , contact us ..

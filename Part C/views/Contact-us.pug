@@ -1,5 +1,6 @@
-doctype html
-html
+extends layout
+
+block topContent
     head
       meta(charset='UTF-8')
       link(rel='stylesheet' href='/CSS/contact.css')
@@ -8,8 +9,7 @@ html
       title Contact us
     .wrapper
       h1 Contact us
-      form.contact-form
-        form(action='mailto:flow.studio@gmail.com' method='post' enctype='text/plain')
+      form.contact-form(action='/', enctype='text/plain', method='GET', onsubmit='showAlert(event)')
           label.request(for='request') Select request topic:
           select#request(name='request' size='1')
             option(value='Forget your password') Forget your password
@@ -25,4 +25,3 @@ html
           textarea#description(name='description' required='')
           .form-submit
             input(type='submit' value='Send')
-

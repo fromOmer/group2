@@ -13,7 +13,7 @@ head
     .container
       form.form-container
         h1 Review class
-        form(action='mailto:flow.studio@gmail.com' method='post' enctype='text/plain')
+        form(action='/' ,method='get' ,enctype='text/plain' ,onsubmit='showAlert(event)')
           select#training-selected(name='training')
             option(value='') Select a Training
           br
@@ -29,4 +29,4 @@ head
             br
             |  A score of 1 indicates that the workout was not challenging at all for you.
           .form-submit
-            input#submit-btn(type='submit' value='Register')
+            input#submit-btn(type='submit' value='Send review')

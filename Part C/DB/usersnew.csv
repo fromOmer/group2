@@ -1,0 +1,4 @@
+id,firstname,lastname,email,password,health
+1,shahar,baruch,demo@gmail.com,123456,5
+2,omer,form,demo1@gmail.com,123456,5
+3,yafa,shalom,yafa@gmail.com,123456,5

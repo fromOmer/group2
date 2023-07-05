@@ -5,6 +5,11 @@
     font-family: Geneva, Verdana, Buffalo, Tahoma sans-serif;
 }
 
+.row{
+    display: none;
+}
+
+
 body{
     background: url("../pics/sign-up.jpeg") no-repeat;
     background-size: cover;
