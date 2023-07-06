@@ -12,9 +12,9 @@ body{
 }
 
 .wrapper{
-    width: 400px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    width: 450px;
+    margin-top: 100px;
+    margin-bottom: 200px;
     background-color: papayawhip;
     background-color: rgba(255, 239, 213, 0.2);
     border-radius: 10px;
@@ -24,10 +24,10 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
 }
 
 h1{
+    margin-top: 1.2rem;
     font-size: 2rem;
     color: #5e5551;
     margin-bottom: 1.2rem;
@@ -67,7 +67,7 @@ input:focus{
 .member{
     font-size: 0.9rem;
     margin-top: 1.2rem;
-    color: #5e5551;
+    color: black;
 }
 
 .member a{
@@ -78,7 +78,7 @@ input:focus{
 .recoverPass{
     text-align: center;
     font-size: 0.9rem;
-    color: #5e5551;
+    color: black;
     margin: 0.3rem 1.4rem 0 0;
 }
 
@@ -138,7 +138,7 @@ select {
 	border: 1px solid #e46c74;
 	border-radius: 100px;
     margin-left: 0px;
-    width: 100%;
+    width: 15%;
 }
 
 .contact-form textarea {
@@ -386,5 +386,9 @@ nav img{
     padding: 5px 8px;
     border-radius: 3px;
     border: 1px solid red;
+    display: none;
+}
+
+.row{
     display: none;
 }

@@ -1,5 +1,6 @@
-doctype html
-html
+extends layout
+
+block topContent
   head
     meta(charset='UTF-8')
     link(rel='stylesheet' href='/CSS/SignUp2.css')
@@ -20,7 +21,8 @@ html
         input#Email(type='Email' name='Email' placeholder='Enter Email' required='')
         label(for='password') Please enter your password
         input#password(type='password' name='password' placeholder='Enter Password' required='')
-        label(for='healthlevel') Health level:
+        label(for='healthlevel') Health level
+        br
         select#Healthlevel(name='Healthlevel' size='1' required='')
           option(value='1') 1
           option(value='2') 2
@@ -32,5 +34,3 @@ html
           | Already a member?
           a(href='/Sign_in')
             | Login Here
-    br
-    br
